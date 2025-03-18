@@ -19,7 +19,7 @@
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="text-[16px] text-slate-300 flex justify-center items-center"
                     style="font-family: 'Autour One', system-ui;"><i
-                        class="fa-solid fa-leaf text-[20px] mr-2 text-sky-400"></i>GM NEXUS</span>
+                        class="fa-solid fa-server text-[20px] mr-2 text-sky-400"></i>GM NEXUS</span>
             </a>
             <div class="flex justify-between items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <div
@@ -73,6 +73,15 @@
         </div>
     </div>
 
+    <div class="mx-2 float-right pr-2 md:w-1/2 md:mx-auto md:float-none md:-mb-1 md:text-right">
+        <button id="claimTokens"
+            class="py-1 px-1.5 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md cursor-pointer">Claim
+            GNEX</button>
+        <button id="exchange"
+            class="py-1 px-1.5 ml-1 md:mr-2 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md cursor-pointer">NEX
+            <i class="fa-solid fa-arrow-right-arrow-left"></i> GNEX</button>
+    </div>
+
     <div class="md:flex md:w-1/2 md:mx-auto md:mt-6">
         <div class="container w-full h-full flex justify-center items-center">
             <div
@@ -87,8 +96,7 @@
                     <div class="py-0.5 px-1 bg-slate-900 text-yellow-400">HIGH APY</div>
                     <div class="py-0.5 px-1 bg-slate-900">🔥</div>
                 </div>
-                <div
-                    class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
+                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
                     <div class="text-[#DDDDDD]">Balance <i
                             class="fa-solid fa-wallet text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i>
                     </div>
@@ -96,8 +104,7 @@
                         <span id="balance">0</span> <span>NEX</span>
                     </div>
                 </div>
-                <div
-                    class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
+                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
                     <div class="text-[#DDDDDD]">APY <i
                             class="fa-solid fa-fire-flame-curved text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i>
                     </div>
@@ -105,16 +112,14 @@
                         <span>7%</span>
                     </div>
                 </div>
-                <div
-                    class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
+                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
                     <div class="text-[#DDDDDD]">Staked <i
                             class="fa-solid fa-lock text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i></div>
                     <div class="text-[#DDDDDD]">
                         <span id="stakedAmount">0</span> NEX
                     </div>
                 </div>
-                <div
-                    class="border-l-3 border-sky-400 px-3 py-1 mb-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
+                <div class="border-l-3 border-sky-400 px-3 py-1 mb-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
                     <div class="text-[#DDDDDD]">Rewards <i
                             class="fa-solid fa-gift text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i></div>
                     <div class="text-[#DDDDDD]">
@@ -188,8 +193,7 @@
                     <div class="py-0.5 px-1 bg-slate-900 text-yellow-400">HIGH APY</div>
                     <div class="py-0.5 px-1 bg-slate-900">🔥</div>
                 </div>
-                <div
-                    class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
+                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
                     <div class="text-[#DDDDDD]">Balance <i
                             class="fa-solid fa-wallet text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i>
                     </div>
@@ -197,8 +201,7 @@
                         <span id="gnexbalance">0</span> <span>GNEX</span>
                     </div>
                 </div>
-                <div
-                    class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
+                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
                     <div class="text-[#DDDDDD]">APY <i
                             class="fa-solid fa-fire-flame-curved text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i>
                     </div>
@@ -206,16 +209,14 @@
                         <span>7%</span>
                     </div>
                 </div>
-                <div
-                    class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
+                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
                     <div class="text-[#DDDDDD]">Staked <i
                             class="fa-solid fa-lock text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i></div>
                     <div class="text-[#DDDDDD]">
                         <span id="gnexStakedAmount">0</span> GNEX
                     </div>
                 </div>
-                <div
-                    class="border-l-3 border-sky-400 px-3 py-1 mb-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
+                <div class="border-l-3 border-sky-400 px-3 py-1 mb-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
                     <div class="text-[#DDDDDD]">Rewards <i
                             class="fa-solid fa-gift text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i></div>
                     <div class="text-[#DDDDDD]">
