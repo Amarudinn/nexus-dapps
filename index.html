@@ -19,11 +19,11 @@
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
                 <span class="text-[16px] text-slate-300 flex justify-center items-center"
                     style="font-family: 'Autour One', system-ui;"><i
-                        class="fa-solid fa-server text-[20px] mr-2 text-sky-400"></i>GM NEXUS</span>
+                        class="fa-solid fa-server text-[20px] mr-2 text-sky-600"></i>GM NEXUS</span>
             </a>
             <div class="flex justify-between items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <div
-                    class="flex items-center py-1 px-2 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md cursor-pointer">
+                    class="flex items-center py-1 px-2 bg-sky-600 text-white hover:bg-sky-700 rounded-md cursor-pointer">
                     <img src="/images/metamask.png" alt="images" class="w-5 h-5 mr-1">
                     <button id="connectButton" class="cursor-pointer" onclick="init()">Connect Wallet</button>
                 </div>
@@ -43,7 +43,7 @@
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-500 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                     <li>
                         <a href="#"
-                            class="block py-2 px-3 rounded-sm bg-gray-700/80 text-slate-300 hover:bg-gray-700/50 hover:text-slate-300/80 md:bg-gray-700/80 md:text-slate-300 md:hover:bg-gray-700/50 md:hover:text-slate-300/80 md:py-1.5 md:px-4"
+                            class="block py-2 px-3 rounded-sm bg-gray-700/80 text-white hover:bg-gray-700/50 hover:text-slate-300/80 md:bg-gray-700/80 md:text-slate-300 md:hover:bg-gray-700/50 md:hover:text-slate-300/80 md:py-1.5 md:px-4"
                             aria-current="page">Stake</a>
                     </li>
                     <li>
@@ -64,233 +64,130 @@
         </div>
     </nav>
 
-    <div class="md:flex md:w-1/2 md:mx-auto">
-        <div class="text-slate-300 ml-4 mt-10 md:mt-20 mb-4 md:mb-0 flex-row justify-center items-center">
-            <h3 class="text-[24px] tracking-[1px] font-semibold" style="font-family: 'Delius', 'cursive';">Nexus Stake
-            </h3>
-            <h3 class="text-[16px]" style="font-family: 'Delius', 'cursive';">Enjoy the rewards of staking with high APY
-            </h3>
-        </div>
-    </div>
-
-    <div class="mx-2 float-right pr-2 md:w-1/2 md:mx-auto md:float-none md:-mb-1 md:text-right">
-        <button id="claimTokens"
-            class="py-1 px-1.5 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md cursor-pointer">Claim
-            GNEX</button>
-        <button id="exchange"
-            class="py-1 px-1.5 ml-1 md:mr-2 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md cursor-pointer">NEX
-            <i class="fa-solid fa-arrow-right-arrow-left"></i> GNEX</button>
-    </div>
-
-    <div class="md:flex md:w-1/2 md:mx-auto md:mt-6">
-        <div class="container w-full h-full flex justify-center items-center">
-            <div
-                class="mt-4 md:mt-0 mx-2 px-4 pt-1 pb-4 w-full flex-row justify-center items-center backdrop-blur-lg bg-white/5 rounded-lg shadow-md">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-[#DDDDDD] text-[20px]" style="font-family: 'Delius', 'cursive';">Native Staking</h3>
-                    <h3 id="tvlnative" class="text-[#DDDDDD] text-[16px]" style="display: none;">TVL <span
-                            id="totalStaking">0</span> NEX</h3>
-                </div>
-                <div class="flex gap-1 pl-1 text-[10px] my-3">
-                    <div class="py-0.5 px-1 bg-slate-900 text-green-400">NO LOCK</div>
-                    <div class="py-0.5 px-1 bg-slate-900 text-yellow-400">HIGH APY</div>
-                    <div class="py-0.5 px-1 bg-slate-900">🔥</div>
-                </div>
-                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
-                    <div class="text-[#DDDDDD]">Balance <i
-                            class="fa-solid fa-wallet text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i>
-                    </div>
-                    <div class="text-[#DDDDDD]">
-                        <span id="balance">0</span> <span>NEX</span>
-                    </div>
-                </div>
-                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
-                    <div class="text-[#DDDDDD]">APY <i
-                            class="fa-solid fa-fire-flame-curved text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i>
-                    </div>
-                    <div class="text-[#DDDDDD]">
-                        <span>7%</span>
-                    </div>
-                </div>
-                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
-                    <div class="text-[#DDDDDD]">Staked <i
-                            class="fa-solid fa-lock text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i></div>
-                    <div class="text-[#DDDDDD]">
-                        <span id="stakedAmount">0</span> NEX
-                    </div>
-                </div>
-                <div class="border-l-3 border-sky-400 px-3 py-1 mb-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
-                    <div class="text-[#DDDDDD]">Rewards <i
-                            class="fa-solid fa-gift text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i></div>
-                    <div class="text-[#DDDDDD]">
-                        <span id="rewardAmount">0</span> NEX
-                    </div>
-                </div>
-                <div id="stakeUnstake" style="display: none;">
-                    <div class="grid grid-cols-3 gap-2">
-                        <button
-                            class="py-1.5 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md"
-                            id="stakeButton"><i class="fa-solid fa-coins text-[13px]"></i> Stake</button>
-                        <button
-                            class="py-1.5 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md"
-                            id="unstakeButton"><i class="fa-solid fa-arrow-right text-[13px]"></i> Unstake</button>
-                        <button
-                            class="py-1.5 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md"
-                            onclick="claimReward()"><i class="fa-solid fa-gift text-[13px]"></i> Claim</button>
-                    </div>
-                </div>
+    <div class="flex h-screen items-center justify-center p-4">
+        <div class="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold text-gray-600">Nexus Staking</h1>
                 <button id="connectWallet"
-                    class="py-1.5 w-full bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md cursor-pointer"
-                    onclick="init()">Connect
-                    Wallet</button>
-                <div class="border-l-3 border-sky-400 px-3 pt-1 pb-3 my-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg hidden"
-                    id="stakeSection">
-                    <h3 class="text-[#DDDDDD]">Stake: </h3>
-                    <div class="flex items-center justify-center">
-                        <div class="overflow-hidden flex w-full border-1 border-[#DDDDDD] rounded-md">
-                            <input id="stakeAmount" type="text"
-                                class="w-full text-[#DDDDDD] ml-1 bg-transparent outline-none"
-                                placeholder="Enter amount">
-                            <button
-                                class="bg-sky-400 text-[14px] text-slate-900 py-1.5 px-2 ml-2 hover:bg-sky-600 hover:text-slate-300"
-                                id="maxStakeAmount" onclick="setMaxStakeAmount()">Max</button>
-                        </div>
-                        <button
-                            class="bg-sky-400 text-slate-900 text-[16px] block hover:bg-sky-600 hover:text-slate-300 px-2 py-1.5 ml-1 rounded-md"
-                            onclick="stake()">Stake</button>
+                    class="hidden px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">
+                    Connect Wallet
+                </button>
+                <button id="nativeConnectWallet" onclick="init()"
+                    class="px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">
+                    Connect Wallet
+                </button>
+            </div>
+
+            <div id="tvlnative" class="hidden mb-6 p-4 bg-sky-50 rounded-lg">
+                <p class="text-sm text-gray-600">Total Value Locked</p>
+                <h3 class="text-xl font-semibold text-gray-600"><span class="text-sky-600" id="totalStaking">0</span> NEX</h3>
+            </div>
+
+            <div id="uniqueNative" class="hidden mb-6 p-4 bg-sky-50 rounded-lg">
+                <p class="text-sm text-gray-600">Unique Stakers</p>
+                <h3 class="flex items-center text-xl font-semibold text-gray-800"><i
+                    class="fa-solid fa-user mr-2 text-[17px] text-sky-600"></i><span class="text-gray-600" id="uniqueStakers">Loading...</span></h3>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex items-center text-gray-600 mb-1">
+                        <span class="text-sm">Balance</span>
+                        <i class="fas fa-wallet ml-2 text-sm"></i>
+                    </div>
+                    <div class="text-xl font-semibold text-gray-800">
+                        <span class="text-sky-600" id="balance">0</span> <span class="text-gray-600">NEX</span>
                     </div>
                 </div>
-                <div class="border-l-3 border-sky-400 px-3 pt-1 pb-3 my-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg hidden"
-                    id="unstakeSection">
-                    <h3 class="text-[#DDDDDD]">Unstake: </h3>
-                    <div class="flex items-center justify-center">
-                        <div class="overflow-hidden flex w-full border-1 border-[#DDDDDD] rounded-md">
-                            <input id="unstakeAmount" type="text"
-                                class="w-full text-[#DDDDDD] ml-1 bg-transparent outline-none"
-                                placeholder="Enter amount">
-                            <button
-                                class="bg-sky-400 text-[14px] text-slate-900 py-1.5 px-2 ml-2 hover:bg-sky-600 hover:text-slate-300"
-                                id="maxStakeAmount" onclick="setMaxUnstakeAmount()">Max</button>
-                        </div>
-                        <button
-                            class="bg-sky-400 text-slate-900 text-[16px] block hover:bg-sky-600 hover:text-slate-300 px-2 py-1.5 ml-1 rounded-md"
-                            onclick="unstakePartial()">Unstake</button>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex items-center text-gray-600 mb-1">
+                        <span class="text-sm">APY</span>
+                        <i class="fas fa-percentage ml-2 text-sm"></i>
+                    </div>
+                    <div class="text-xl font-semibold text-sky-600">
+                        <span>4.73%</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex items-center text-gray-600 mb-1">
+                        <span class="text-sm">Staked</span>
+                        <i class="fas fa-lock ml-2 text-sm"></i>
+                    </div>
+                    <div class="text-xl font-semibold text-gray-800">
+                        <span class="text-sky-600" id="stakedAmount">0</span> <span class="text-gray-600">NEX</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <div class="flex items-center text-gray-600 mb-1">
+                        <span class="text-sm">Rewards</span>
+                        <i class="fas fa-coins ml-2 text-sm"></i>
+                    </div>
+                    <div class="text-xl font-semibold text-sky-600">
+                        <span id="rewardAmount">0</span> <span class="text-gray-600">NEX</span>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="container w-full h-full flex justify-center items-center">
-            <div
-                class="mt-10 md:mt-0 mx-2 px-4 pt-1 pb-4 w-full flex-row justify-center items-center backdrop-blur-lg bg-white/5 rounded-lg shadow-md">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-[#DDDDDD] text-[20px]" style="font-family: 'Delius', 'cursive';">GNEX Staking</h3>
-                    <h3 id="tvlgnex" class="text-[#DDDDDD] text-[16px]" style="display: none;">TVL <span
-                            id="totalTokenStaking">0</span> GNEX</h3>
+            <div id="stakeUnstake" class="hidden mb-6">
+                <div class="flex space-x-2">
+                    <button id="stakeButton"
+                        class="flex-1 px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition flex items-center justify-center">
+                        <i class="fas fa-plus mr-2"></i> Stake
+                    </button>
+                    <button id="unstakeButton"
+                        class="flex-1 px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition flex items-center justify-center">
+                        <i class="fas fa-minus mr-2"></i> Unstake
+                    </button>
+                    <button onclick="claimReward()"
+                        class="flex-1 px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition flex items-center justify-center">
+                        <i class="fas fa-hand-holding-usd mr-2"></i> Claim
+                    </button>
                 </div>
-                <div class="flex gap-1 pl-1 text-[10px] my-3">
-                    <div class="py-0.5 px-1 bg-slate-900 text-green-400">NO LOCK</div>
-                    <div class="py-0.5 px-1 bg-slate-900 text-yellow-400">HIGH APY</div>
-                    <div class="py-0.5 px-1 bg-slate-900">🔥</div>
+            </div>
+
+            <div id="stakeSection" class="hidden fade-in mb-6 p-4 bg-sky-50 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Stake NEX</h3>
+                <div class="space-y-3">
+                    <div class="flex">
+                        <input id="stakeAmount" type="text"
+                            class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+                            placeholder="Enter amount">
+                        <button id="maxStakeAmount" onclick="setMaxStakeAmount()"
+                            class="px-4 py-2 bg-sky-600 text-white rounded-r-lg hover:bg-sky-700 transition">
+                            Max
+                        </button>
+                    </div>
+                    <button onclick="stake()"
+                        class="w-full px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">
+                        Confirm Stake
+                    </button>
                 </div>
-                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
-                    <div class="text-[#DDDDDD]">Balance <i
-                            class="fa-solid fa-wallet text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i>
+            </div>
+
+            <div id="unstakeSection" class="hidden fade-in mb-6 p-4 bg-sky-50 rounded-lg">
+                <h3 class="text-lg font-semibold text-gray-800 mb-3">Unstake NEX</h3>
+                <div class="space-y-3">
+                    <div class="flex">
+                        <input id="unstakeAmount" type="text"
+                            class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
+                            placeholder="Enter amount">
+                        <button id="maxStakeAmount" onclick="setMaxUnstakeAmount()"
+                            class="px-4 py-2 bg-sky-600 text-white rounded-r-lg hover:bg-sky-700 transition">
+                            Max
+                        </button>
                     </div>
-                    <div class="text-[#DDDDDD]">
-                        <span id="gnexbalance">0</span> <span>GNEX</span>
-                    </div>
-                </div>
-                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
-                    <div class="text-[#DDDDDD]">APY <i
-                            class="fa-solid fa-fire-flame-curved text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i>
-                    </div>
-                    <div class="text-[#DDDDDD]">
-                        <span>7%</span>
-                    </div>
-                </div>
-                <div class="border-l-3 border-sky-400 px-3 py-1 mb-3 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
-                    <div class="text-[#DDDDDD]">Staked <i
-                            class="fa-solid fa-lock text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i></div>
-                    <div class="text-[#DDDDDD]">
-                        <span id="gnexStakedAmount">0</span> GNEX
-                    </div>
-                </div>
-                <div class="border-l-3 border-sky-400 px-3 py-1 mb-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg">
-                    <div class="text-[#DDDDDD]">Rewards <i
-                            class="fa-solid fa-gift text-[12px] text-sky-400 bg-slate-800 p-1.5 rounded-md"></i></div>
-                    <div class="text-[#DDDDDD]">
-                        <span id="gnexRewardAmount">0</span> NEX
-                    </div>
-                </div>
-                <div id="gnexStakeUnstake" style="display: none;">
-                    <div class="grid grid-cols-3 gap-2">
-                        <button
-                            class="py-1.5 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md"
-                            id="gnexStakeButton"><i class="fa-solid fa-coins text-[13px]"></i> Stake</button>
-                        <button
-                            class="py-1.5 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md"
-                            id="gnexUnstakeButton"><i class="fa-solid fa-arrow-right text-[13px]"></i> Unstake</button>
-                        <button
-                            class="py-1.5 bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md"
-                            onclick="gnexClaimReward()"><i class="fa-solid fa-gift text-[13px]"></i> Claim</button>
-                    </div>
-                </div>
-                <button id="gnexConnectWallet"
-                    class="py-1.5 w-full bg-sky-400 text-slate-900 hover:bg-sky-600 hover:text-slate-300 rounded-md cursor-pointer"
-                    style="display: block;" onclick="init()">Connect Wallet</button>
-                <div class="border-l-3 border-sky-400 px-3 pt-1 pb-3 my-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg hidden"
-                    id="gnexStakeSection">
-                    <h3 class="text-[#DDDDDD]">Stake: </h3>
-                    <div class="flex items-center justify-center">
-                        <div class="overflow-hidden flex w-full border-1 border-[#DDDDDD] rounded-md">
-                            <input id="gnexStakeAmount" type="text"
-                                class="w-full text-[#DDDDDD] ml-1 bg-transparent outline-none"
-                                placeholder="Enter amount">
-                            <button
-                                class="bg-sky-400 text-[14px] text-slate-900 py-1.5 px-2 ml-2 hover:bg-sky-600 hover:text-slate-300"
-                                id="gnexMaxStakeAmount" onclick="gnexSetMaxStakeAmount()">Max</button>
-                        </div>
-                        <button
-                            class="bg-sky-400 text-slate-900 text-[16px] block hover:bg-sky-600 hover:text-slate-300 px-2 py-1.5 ml-1 rounded-md"
-                            onclick="gnexStake()">Stake</button>
-                    </div>
-                </div>
-                <div class="border-l-3 border-sky-400 px-3 pt-1 pb-3 my-4 backdrop-blur-lg bg-white/5 shadow-lg rounded-lg hidden"
-                    id="gnexUnstakeSection">
-                    <h3 class="text-[#DDDDDD]">Unstake: </h3>
-                    <div class="flex items-center justify-center">
-                        <div class="overflow-hidden flex w-full border-1 border-[#DDDDDD] rounded-md">
-                            <input id="gnexUnstakeAmount" type="text"
-                                class="w-full text-[#DDDDDD] ml-1 bg-transparent outline-none"
-                                placeholder="Enter amount">
-                            <button
-                                class="bg-sky-400 text-[14px] text-slate-900 py-1.5 px-2 ml-2 hover:bg-sky-600 hover:text-slate-300"
-                                id="gnexMaxStakeAmount" onclick="gnexSetMaxUnstakeAmount()">Max</button>
-                        </div>
-                        <button
-                            class="bg-sky-400 text-slate-900 text-[16px] block hover:bg-sky-600 hover:text-slate-300 px-2 py-1.5 ml-1 rounded-md"
-                            onclick="gnexUnstakePartial()">Unstake</button>
-                    </div>
+                    <button onclick="unstakePartial()"
+                        class="w-full px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">
+                        Confirm Unstake
+                    </button>
                 </div>
             </div>
         </div>
     </div>
-
-    <div
-        class="flex justify-center items-center mt-16 mb-6 gap-2 text-[18px] text-slate-300 md:absolute md:bottom-0 md:left-1/2 md:transform md:-translate-x-1/2">
-        <a href="https://x.com/m_amarudinn2">
-            <div class="bg-white/5 shadow-lg w-8 h-8 flex justify-center items-center rounded-full"><i
-                    class="fa-brands fa-x-twitter"></i></div>
-        </a>
-        <a href="https://t.me/AirdropIntelligent">
-            <div class="bg-white/5 shadow-lg w-8 h-8 flex justify-center items-center rounded-full"><i
-                    class="fa-brands fa-telegram"></i></div>
-        </a>
-        <a href="#">
-            <div class="bg-white/5 shadow-lg w-8 h-8 flex justify-center items-center rounded-full"><i
-                    class="fa-brands fa-github"></i></div>
-        </a>
     </div>
 
     <script src="index.js"></script>

@@ -11,6 +11,12 @@ contract NativeStaking {
     }
 
     mapping(address => Stake) public stakes;
+    
+    // New mapping to track if an address has ever staked
+    mapping(address => bool) public hasStaked;
+    
+    // New variable to count unique stakers
+    uint256 public totalUniqueStakers;
 
     address public owner;
 
@@ -18,8 +24,8 @@ contract NativeStaking {
     event Unstaked(address indexed user, uint256 amount);
     event RewardClaimed(address indexed user, uint256 amount);
 
-    //Default 7000 (7%)
-    uint256 public rewardRate = 7000;
+    //Default 4730 (4.73%)
+    uint256 public rewardRate = 4730;
     uint256 public constant SCALE = 1e5; 
 
     uint256 public totalStaking; 
@@ -42,6 +48,12 @@ contract NativeStaking {
         require(msg.value > 0, "Amount should be greater than 0");
 
         Stake storage userStake = stakes[msg.sender];
+
+        // Track new unique staker
+        if (!hasStaked[msg.sender]) {
+            hasStaked[msg.sender] = true;
+            totalUniqueStakers++;
+        }
 
         if (userStake.amount > 0) {
             uint256 reward = calculateReward(msg.sender);
@@ -145,6 +157,11 @@ contract NativeStaking {
 
     function getTotalStaking() external view returns (uint256) {
         return totalStaking;
+    }
+    
+    // New function to get total unique stakers
+    function getTotalUniqueStakers() external view returns (uint256) {
+        return totalUniqueStakers;
     }
 
     receive() external payable {}
