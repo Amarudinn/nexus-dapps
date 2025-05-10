@@ -1,3 +1,10 @@
+const menuButton = document.querySelector('[data-collapse-toggle="navbar-cta"]');
+const menu = document.getElementById('navbar-cta');
+
+menuButton.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+});
+
 const connectWalletBtn = document.getElementById('connectWallet');
 const nativeConnectWalletBtn = document.getElementById('nativeConnectWallet');
 const stakeUnstakeSection = document.getElementById('stakeUnstake');
