@@ -28,6 +28,7 @@
     "colors": "^1.4.0",
     "dotenv": "^16.4.7",
     "ethers": "^6.13.5",
+    "sweetalert2": "^11.21.0",
     "tailwindcss": "^4.0.14"
   }
 }

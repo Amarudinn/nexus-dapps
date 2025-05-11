@@ -2,7 +2,7 @@ const menuButton = document.querySelector('[data-collapse-toggle="navbar-cta"]')
 const menu = document.getElementById('navbar-cta');
 
 menuButton.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
+	menu.classList.toggle('hidden');
 });
 
 const connectWalletBtn = document.getElementById('connectWallet');
@@ -395,13 +395,13 @@ async function switchOrAddChain(chainId) {
 					}],
 				});
 			} catch (addError) {
-				console.error('Failed to add TEA-Sepolia network:', addError);
-				showNotification('Failed to add TEA-Sepolia network', 'error');
+				console.error('Failed to add Nexus network:', addError);
+				showNotification('Failed to add Nexus network', 'error');
 				throw addError;
 			}
 		} else {
-			console.error('Failed to switch to TEA-Sepolia network:', switchError);
-			showNotification('Failed to switch to TEA-Sepolia network', 'error');
+			console.error('Failed to switch to Nexus network:', switchError);
+			showNotification('Failed to switch to Nexus network', 'error');
 			throw switchError;
 		}
 	}
@@ -516,8 +516,19 @@ async function stake() {
 		return;
 	}
 
-	const confirmStake = confirm(`You are about to stake ${amount} TEA. Confirm?`);
-	if (!confirmStake) return;
+	const confirmStake = await Swal.fire({
+		title: 'Confirm Stake',
+		html: `You are about to stake <b>${amount} NEX</b>`,
+		icon: 'question',
+		showCancelButton: true,
+		confirmButtonText: 'Confirm Stake',
+		cancelButtonText: 'Cancel',
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		reverseButtons: true
+	});
+
+	if (!confirmStake.isConfirmed) return;
 
 	try {
 		const stakedAmount = web3.utils.toWei(amount, 'ether');
@@ -571,8 +582,19 @@ async function unstakePartial() {
 			return;
 		}
 
-		const confirmUnstake = confirm(`Confirm Unstake:\n\nYou will unstake: ${amount} TEA\nFrom total Staked: ${stakedBalance} TEA`);
-		if (!confirmUnstake) return;
+		const confirmUnstake = await Swal.fire({
+			title: 'Confirm Unstake',
+			html: `<p>You will unstake: <b>${amount} NEX</b></p>`,
+			icon: 'question',
+			showCancelButton: true,
+			confirmButtonText: 'Confirm Unstake',
+			cancelButtonText: 'Cancel',
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			reverseButtons: true
+		});
+
+		if (!confirmUnstake.isConfirmed) return;
 
 		showNotification('Processing unstake... Please confirm in MetaMask', 'info');
 
@@ -586,7 +608,7 @@ async function unstakePartial() {
 			unstakedAmount: amount,
 			remainingBalance: (stakedBalance - amount).toFixed(2),
 			transactionHash: unstakeTx.transactionHash,
-			explorerLink: `https://sepolia.tea.xyz/tx/${unstakeTx.transactionHash}`
+			explorerLink: `https://explorer.nexus.xyz/tx/${unstakeTx.transactionHash}`
 		});
 
 		await updateUnstakeData();
@@ -626,8 +648,19 @@ async function claimReward() {
 			return;
 		}
 
-		const confirmClaim = confirm(`Confirm Claim Reward:\n\nYou will claim: ${Number(pendingReward).toFixed(4)} TEA`);
-		if (!confirmClaim) return;
+		const confirmClaim = await Swal.fire({
+			title: 'Confirm Claim Reward',
+			html: `You will claim: <b>${Number(pendingReward).toFixed(4)} NEX</b>`,
+			icon: 'question',
+			showCancelButton: true,
+			confirmButtonText: 'Claim Reward',
+			cancelButtonText: 'Cancel',
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			reverseButtons: true
+		});
+
+		if (!confirmClaim.isConfirmed) return;
 
 		showNotification('Processing claim... Please confirm in MetaMask', 'info');
 
@@ -639,7 +672,7 @@ async function claimReward() {
 		console.log('Claim Reward Successful!', {
 			amount: Number(pendingReward).toFixed(4),
 			transactionHash: claimTx.transactionHash,
-			explorerLink: `https://sepolia.tea.xyz/tx/${claimTx.transactionHash}`
+			explorerLink: `https://explorer.nexus.xyz/tx/${claimTx.transactionHash}`
 		});
 
 		await Promise.all([
