@@ -391,7 +391,7 @@ async function switchOrAddChain(chainId) {
 							decimals: 18
 						},
 						rpcUrls: ['https://nexus-new.rpc.caldera.xyz/http'],
-						blockExplorerUrls: []
+						blockExplorerUrls: ['https://explorer.nexus.xyz']
 					}],
 				});
 			} catch (addError) {
@@ -401,7 +401,6 @@ async function switchOrAddChain(chainId) {
 			}
 		} else {
 			console.error('Failed to switch to Nexus network:', switchError);
-			showNotification('Failed to switch to Nexus network', 'error');
 			throw switchError;
 		}
 	}

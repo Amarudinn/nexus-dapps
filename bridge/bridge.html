@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Bridge</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body class="bg-gray-900">
+
+    <nav class="backdrop-blur-lg bg-white/5 border-gray-200">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="text-[16px] text-gray-300 flex justify-center items-center"
+                    style="font-family: 'Autour One', system-ui;"><i
+                        class="fa-solid fa-server text-[20px] mr-2 text-sky-600"></i>GM NEXUS</span>
+            </a>
+            <div class="flex justify-between items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <div
+                    class="flex items-center py-1 px-2 bg-sky-600 text-white hover:bg-sky-700 rounded-md cursor-pointer">
+                    <img src="/images/metamask.png" alt="images" class="w-5 h-5 mr-1">
+                    <button id="connectButton" class="cursor-pointer" onclick="init()">Connect Wallet</button>
+                </div>
+                <button data-collapse-toggle="navbar-cta" type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-cta" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                        viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15" />
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
+                <ul
+                    class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-500 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                    <li>
+                        <a href="/index.html"
+                            class="block py-2 px-3 rounded-sm bg-transparent text-gray-300 hover:bg-gray-700/80 md:py-1.5 md:px-4"
+                            aria-current="page">Stake</a>
+                    </li>
+                    <!-- <li>
+                        <a href="#"
+                            class="block py-2 px-3 rounded-sm bg-transparent text-gray-300 hover:bg-gray-700/80 md:py-1.5 md:px-4">Farm</a>
+                    </li> -->
+                    <li>
+                        <a href="/bridge/bridge.html"
+                            class="block py-2 px-3 rounded-sm bg-gray-700/80 text-white hover:bg-gray-700/50 hover:text-gray-300/80 md:bg-gray-700/80 md:text-gray-300 md:hover:bg-gray-700/50 md:hover:text-gray-300/80 md:py-1.5 md:px-4">Bridge</a>
+                    </li>
+                    <li>
+                        <a href="#"
+                            class="block py-2 px-3 rounded-sm bg-transparent text-gray-300 hover:bg-gray-700/80 md:py-1.5 md:px-4">Sport
+                            Betting</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="notification-overlay" class="fixed inset-0 bg-black/30 flex items-center justify-center p-4 z-50">
+        <div id="notification"
+            class="relative w-full max-w-md p-6 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 rounded-lg shadow-xl">
+            <button id="close-btn"
+                class="absolute top-3 right-3 text-yellow-700 hover:text-yellow-900 focus:outline-none">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+
+            <div class="flex items-start">
+                <svg class="w-6 h-6 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <div>
+                    <h3 class="text-lg font-bold mb-2">Note</h3>
+                    <p class="text-yellow-800">For now, you can only bridge Nexus to Sepolia. If you bridge Nexus to
+                        Sepolia, you will lose your NEX points and they will be replaced with sNEX tokens (a
+                        representation of NEX tokens in Sepolia). Please do not try to bridge too much.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex h-screen items-center justify-center p-4">
+        <div class="max-w-md backdrop-blur-lg bg-white rounded-xl shadow-md overflow-hidden p-4 md:px-6 mx-2">
+            <div class="flex justify-between items-center mb-6">
+                <div class="flex">
+                    <button class="px-4 py-2 text-2xl font-bold text-gray-600">Nexus Bridge</button>
+                </div>
+                <button id="connectWalletBtn"
+                    class="px-4 py-2 text-[16px] bg-sky-600 text-white rounded-lg text-sm hover:bg-sky-700 cursor-pointer">
+                    Connect Wallet
+                </button>
+            </div>
+
+            <div class="backdrop-blur-lg bg-sky-50 rounded-lg p-4 shadow-md">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-600">From</span>
+
+                    <div id="walletSatu" class="flex justify-center items-center hidden"><i
+                            class="fa-solid fa-wallet text-gray-600 pr-1"></i><span id="userAddress"
+                            class="text-[16px] text-gray-600 hidden"></span></div>
+                </div>
+
+                <div class="flex justify-between items-center mb-0.5">
+                    <div class="flex justify-center items-center">
+                        <div class="rounded-md border border-gray-600 py-1 px-2"><span id="fromCurrency"
+                                class="font-medium text-sky-600">NEX</span></div>
+                        <i class="fa-solid fa-arrow-right text-gray-600 mx-1.5 text-[12px]"></i>
+                        <div class="flex items-center py-1 px-2 rounded-md border border-gray-600"><img id="fromImage"
+                                src="/images/nexus.png" alt="Erorr" class="w-5 h-5"><span
+                                class="text-[16px] text-gray-600 ml-2" id="fromNetwork">Nexus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span id="ethBalance" class="text-sm text-gray-600">Balance: -</span>
+                </div>
+
+                <div class="border-2 border-sky-400 text-gray-600 flex justify-between rounded-lg md:p-2 p-1.5">
+                    <input id="sellAmount" type="text" placeholder="0.0" class="w-full px-2 py-1 outline-none">
+                    <div class="flex space-x-1">
+                        <button id="percent20"
+                            class="md:px-2 md:py-1 px-1 py-0.5 text-xs bg-sky-600 text-white rounded hover:bg-sky-700">20%</button>
+                        <button id="percent50"
+                            class="md:px-2 md:py-1 px-1 py-0.5 text-xs bg-sky-600 text-white rounded hover:bg-sky-700">50%</button>
+                        <button id="percentMax"
+                            class="md:px-2 md:py-1 px-1 py-0.5 text-xs bg-sky-600 text-white rounded hover:bg-sky-700">MAX</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center my-4">
+                <i class="fa-solid fa-arrow-down text-gray-600 text-[18px]"></i>
+            </div>
+
+            <div class="backdrop-blur-lg bg-sky-50 rounded-lg p-4 mb-6 shadow-md">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm text-gray-600">To</span>
+                    <div id="walletDua" class="flex justify-center items-center hidden"><i
+                            class="fa-solid fa-wallet text-gray-600 pr-1"></i><span id="buyAddress"
+                            class="text-[16px] text-gray-600 hidden"></span></div>
+                </div>
+
+                <div class="flex justify-between items-center mb-4">
+                    <div class="flex justify-center items-center">
+                        <div class="rounded-md border border-gray-600 py-1 px-2"><span id="toCurrency"
+                                class="font-medium text-sky-600">sNEX</span></div>
+                        <i class="fa-solid fa-arrow-right text-gray-600 mx-1.5 text-[12px]"></i>
+                        <div class="flex items-center py-1 px-2 rounded-md border border-gray-600"><img id="toImage"
+                                src="/images/eth.png" alt="Erorr" class="w-5 h-5"><span
+                                class="text-[16px] text-gray-600 ml-2" id="toNetwork">Sepolia</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="border-2 border-sky-400 bg-gray-600/5 overflow-hidden rounded-lg md:p-2 p-1.5 text-gray-600">
+                    <input id="buyAmount" type="text" placeholder="0.0" class="w-full px-2 py-1 outline-none" disabled>
+                </div>
+            </div>
+
+            <div id="detail"
+                class="hidden backdrop-blur-lg bg-gray-50 rounded-lg p-4 mb-6 shadow-md text-gray-600 text-[14px]">
+                <div class="flex justify-between">
+                    <span>Estimation time</span>
+                    <span>~ 5 Minutes</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>Network cost</span>
+                    <span class="network-cost-value">0.02 NEX</span>
+                </div>
+                <div class="flex justify-between">
+                    <span>You will receive</span>
+                    <span><span id="receiveAmount">0</span> <span id="receiveUnit">sNEX</span></span>
+                </div>
+            </div>
+
+            <button id="swapBtn"
+                class="w-full bg-sky-600 text-white py-3 rounded-lg font-medium hover:bg-sky-700 disabled:bg-gray-600 disabled:text-gray-200 cursor-pointer"
+                disabled>
+                Bridge NEX → sNEX
+            </button>
+        </div>
+    </div>
+
+    <script src="/bridge/bridge.js"></script>
+</body>
+
+</html>

@@ -1,2 +1,7 @@
 /node_modules
 /bot
+/contract
+.env
+solver.js
+transfer.js
+log-transaction.txt
