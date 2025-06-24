@@ -25,7 +25,7 @@ unstakeButton.addEventListener('click', () => {
 	unstakeSection.classList.toggle('hidden');
 });
 
-const nativeStakingContract = '0x5cbbD6897797B5932A5e8Fb27880E343c805E2dE';
+const nativeStakingContract = '0x063Dd7b3C4DD90fb27272a06D1f78C0693eDBF98';
 const nativeContractABI = [
 	{
 		"inputs": [],
@@ -384,14 +384,14 @@ async function switchOrAddChain(chainId) {
 					method: 'wallet_addEthereumChain',
 					params: [{
 						chainId,
-						chainName: 'Nexus',
+						chainName: 'Nexus Testnet',
 						nativeCurrency: {
-							name: 'Nexus',
+							name: 'Nexus Testnet',
 							symbol: 'NEX',
 							decimals: 18
 						},
-						rpcUrls: ['https://nexus-new.rpc.caldera.xyz/http'],
-						blockExplorerUrls: ['https://explorer.nexus.xyz']
+						rpcUrls: ['https://nexus-testnet.g.alchemy.com/public'],
+						blockExplorerUrls: ['https://testnet3.explorer.nexus.xyz']
 					}],
 				});
 			} catch (addError) {
@@ -409,7 +409,7 @@ async function switchOrAddChain(chainId) {
 function showNotification(message, type = 'info') {
 	const colors = {
 		info: 'blue',
-		success: 'green',
+		success: 'blue',
 		error: 'red',
 		warning: 'yellow'
 	};
@@ -431,7 +431,7 @@ async function init() {
 
 		try {
 			const chainId = await ethereum.request({ method: 'eth_chainId' });
-			const TEA_SEPOLIA_CHAIN_ID = '0x189';
+			const TEA_SEPOLIA_CHAIN_ID = '0xF64';
 
 			if (chainId !== TEA_SEPOLIA_CHAIN_ID) {
 				await switchOrAddChain(TEA_SEPOLIA_CHAIN_ID);

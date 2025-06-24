@@ -4,12 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus Bridge</title>
+    <title>Nexus Bridge | Build by Community</title>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.4/ethers.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Autour+One&family=Delius&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 </head>
 
@@ -17,10 +20,18 @@
 
     <nav class="backdrop-blur-lg bg-white/5 border-gray-200">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
-            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
-                <span class="text-[16px] text-gray-300 flex justify-center items-center"
-                    style="font-family: 'Autour One', system-ui;"><i
-                        class="fa-solid fa-server text-[20px] mr-2 text-sky-600"></i>GM NEXUS</span>
+            <a href="#" class="flex items-start space-x-3 rtl:space-x-reverse">
+                <span class="text-slate-300" style="font-family: 'Autour One', system-ui;">
+                    <div class="flex flex-col leading-tight">
+                        <span class="text-xl text-white"><i
+                                class="fa-solid fa-server text-[20px] mr-1.5 text-sky-600"></i>GM NEXUS</span>
+                        <div class="flex items-center space-x-2 mt-0.5 relative">
+                            <div class="absolute right-0">
+                                <span class="text-sm text-[12px] text-slate-400">Testnet III</span>
+                            </div>
+                        </div>
+                    </div>
+                </span>
             </a>
             <div class="flex justify-between items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <div
@@ -66,10 +77,9 @@
     </nav>
 
     <div id="notification-overlay" class="fixed inset-0 bg-black/30 flex items-center justify-center p-4 z-50">
-        <div id="notification"
-            class="relative w-full max-w-md p-6 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 rounded-lg shadow-xl">
+        <div id="notification" class="relative w-full max-w-md p-6 bg-sky-100 text-slate-700 rounded-lg shadow-xl">
             <button id="close-btn"
-                class="absolute top-3 right-3 text-yellow-700 hover:text-yellow-900 focus:outline-none">
+                class="absolute top-3 right-3 text-slate-700 hover:text-slate-900 focus:outline-none">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd"
                         d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
@@ -78,16 +88,11 @@
             </button>
 
             <div class="flex items-start">
-                <svg class="w-6 h-6 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd"
-                        d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
-                        clip-rule="evenodd"></path>
-                </svg>
                 <div>
                     <h3 class="text-lg font-bold mb-2">Note</h3>
-                    <p class="text-yellow-800">For now, you can only bridge Nexus to Sepolia. If you bridge Nexus to
-                        Sepolia, you will lose your NEX points and they will be replaced with sNEX tokens (a
-                        representation of NEX tokens in Sepolia). Please do not try to bridge too much.</p>
+                    <p class="text-slate-800">For now, you can only bridge Nexus to Sepolia, you will lose your NEX
+                        tokens and they will be replaced with sNEX tokens (a representation of NEX tokens in Sepolia).
+                        Please do not try to bridge too much.</p>
                 </div>
             </div>
         </div>
@@ -115,11 +120,11 @@
                 </div>
 
                 <div class="flex justify-between items-center mb-0.5">
-                    <div class="flex justify-center items-center">
-                        <div class="rounded-md border border-gray-600 py-1 px-2"><span id="fromCurrency"
-                                class="font-medium text-sky-600">NEX</span></div>
+                    <div class="flex justify-center items-center border-l-2 border-gray-600">
+                        <div class="rounded-md py-1 px-2"><span id="fromCurrency"
+                                class="font-medium text-gray-600">NEX</span></div>
                         <i class="fa-solid fa-arrow-right text-gray-600 mx-1.5 text-[12px]"></i>
-                        <div class="flex items-center py-1 px-2 rounded-md border border-gray-600"><img id="fromImage"
+                        <div class="flex items-center py-1 px-2 rounded-md"><img id="fromImage"
                                 src="/images/nexus.png" alt="Erorr" class="w-5 h-5"><span
                                 class="text-[16px] text-gray-600 ml-2" id="fromNetwork">Nexus</span>
                         </div>
@@ -129,7 +134,7 @@
                     <span id="ethBalance" class="text-sm text-gray-600">Balance: -</span>
                 </div>
 
-                <div class="border-2 border-sky-400 text-gray-600 flex justify-between rounded-lg md:p-2 p-1.5">
+                <div class="border-2 border-gray-400 text-gray-600 flex justify-between rounded-lg md:p-2 p-1.5">
                     <input id="sellAmount" type="text" placeholder="0.0" class="w-full px-2 py-1 outline-none">
                     <div class="flex space-x-1">
                         <button id="percent20"
@@ -155,11 +160,11 @@
                 </div>
 
                 <div class="flex justify-between items-center mb-4">
-                    <div class="flex justify-center items-center">
-                        <div class="rounded-md border border-gray-600 py-1 px-2"><span id="toCurrency"
-                                class="font-medium text-sky-600">sNEX</span></div>
+                    <div class="flex justify-center items-center border-l-2 border-gray-600">
+                        <div class="rounded-md py-1 px-2"><span id="toCurrency"
+                                class="font-medium text-gray-600">sNEX</span></div>
                         <i class="fa-solid fa-arrow-right text-gray-600 mx-1.5 text-[12px]"></i>
-                        <div class="flex items-center py-1 px-2 rounded-md border border-gray-600"><img id="toImage"
+                        <div class="flex items-center py-1 px-2 rounded-md"><img id="toImage"
                                 src="/images/eth.png" alt="Erorr" class="w-5 h-5"><span
                                 class="text-[16px] text-gray-600 ml-2" id="toNetwork">Sepolia</span>
                         </div>
@@ -167,7 +172,7 @@
                 </div>
 
                 <div
-                    class="border-2 border-sky-400 bg-gray-600/5 overflow-hidden rounded-lg md:p-2 p-1.5 text-gray-600">
+                    class="border-2 border-gray-400 bg-gray-600/5 overflow-hidden rounded-lg md:p-2 p-1.5 text-gray-600">
                     <input id="buyAmount" type="text" placeholder="0.0" class="w-full px-2 py-1 outline-none" disabled>
                 </div>
             </div>

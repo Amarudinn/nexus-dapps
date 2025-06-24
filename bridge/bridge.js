@@ -18,7 +18,7 @@ document.getElementById('notification-overlay').addEventListener('click', functi
 let currentAccount = null;
 let userEthBalance = 0;
 const NETWORK_COST = 0.02; // Network cost
-const TEA_SEPOLIA_CHAIN_ID = '0x189';
+const NEXUS_TESTNET = '0xF64';
 
 const connectWalletBtn = document.getElementById('connectWalletBtn');
 const userAddress = document.getElementById('userAddress');
@@ -79,10 +79,10 @@ async function init() {
 
         try {
             const chainId = await window.ethereum.request({ method: 'eth_chainId' });
-            if (chainId !== TEA_SEPOLIA_CHAIN_ID) {
+            if (chainId !== NEXUS_TESTNET) {
                 await window.ethereum.request({
                     method: 'wallet_switchEthereumChain',
-                    params: [{ chainId: TEA_SEPOLIA_CHAIN_ID }],
+                    params: [{ chainId: NEXUS_TESTNET }],
                 });
             }
 
