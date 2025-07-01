@@ -1,3 +1,10 @@
+const menuButton = document.querySelector('[data-collapse-toggle="navbar-cta"]');
+const menu = document.getElementById('navbar-cta');
+
+menuButton.addEventListener('click', () => {
+	menu.classList.toggle('hidden');
+});
+
 const canvas = document.getElementById("ballCanvas");
 const ctx = canvas.getContext("2d");
 
