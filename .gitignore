@@ -1,6 +1,9 @@
 /node_modules
 /contract
+/bridge
 .env
 solver.js
 transfer.js
 log-transaction.txt
+winner-batch.py
+package-lock.json

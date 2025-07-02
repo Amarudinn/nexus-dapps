@@ -14,6 +14,8 @@
 
 <body class="bg-slate-900">
 
+    <canvas id="ballCanvas" class="fixed top-0 left-0 -z-1"></canvas>
+
     <nav class="backdrop-blur-lg bg-white/5 border-gray-200">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2">
             <a href="#" class="flex items-start space-x-3 rtl:space-x-reverse">
@@ -31,7 +33,7 @@
             </a>
             <div class="flex justify-between items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <div
-                    class="flex items-center py-1 px-2 bg-sky-600 text-white hover:bg-sky-700 rounded-md cursor-pointer">
+                    class="flex items-center py-1 px-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-md cursor-pointer">
                     <img src="/images/metamask.png" alt="images" class="w-5 h-5 mr-1">
                     <button id="connectButton" class="cursor-pointer" onclick="init()">Connect Wallet</button>
                 </div>
@@ -63,7 +65,7 @@
                             class="block py-2 px-3 rounded-sm bg-transparent text-slate-300 hover:bg-gray-700/80 md:py-1.5 md:px-4">Bridge</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="/sportbetting/index.html"
                             class="block py-2 px-3 rounded-sm bg-transparent text-slate-300 hover:bg-gray-700/80 md:py-1.5 md:px-4">Sport
                             Betting</a>
                     </li>
@@ -78,11 +80,11 @@
                 <div class="flex justify-between items-center mb-6">
                     <h1 class="text-2xl font-bold text-gray-600">Nexus Staking</h1>
                     <button id="connectWallet"
-                        class="hidden px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">
+                        class="hidden px-4 py-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-lg transition cursor-pointer">
                         Connect Wallet
                     </button>
                     <button id="nativeConnectWallet" onclick="init()"
-                        class="px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">
+                        class="px-4 py-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-lg transition cursor-pointer">
                         Connect Wallet
                     </button>
                 </div>
@@ -145,15 +147,15 @@
                 <div id="stakeUnstake" class="hidden mb-6">
                     <div class="flex space-x-2">
                         <button id="stakeButton"
-                            class="flex-1 px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition flex items-center justify-center">
+                            class="flex-1 px-4 py-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-lg transition flex items-center justify-center cursor-pointer">
                             <i class="fas fa-plus mr-2"></i> Stake
                         </button>
                         <button id="unstakeButton"
-                            class="flex-1 px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition flex items-center justify-center">
+                            class="flex-1 px-4 py-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-lg transition flex items-center justify-center cursor-pointer">
                             <i class="fas fa-minus mr-2"></i> Unstake
                         </button>
                         <button onclick="claimReward()"
-                            class="flex-1 px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition flex items-center justify-center">
+                            class="flex-1 px-4 py-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-lg transition flex items-center justify-center cursor-pointer">
                             <i class="fas fa-hand-holding-usd mr-2"></i> Claim
                         </button>
                     </div>
@@ -167,12 +169,12 @@
                                 class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
                                 placeholder="Enter amount">
                             <button id="maxStakeAmount" onclick="setMaxStakeAmount()"
-                                class="px-4 py-2 bg-sky-600 text-white rounded-r-lg hover:bg-sky-700 transition">
+                                class="px-4 py-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-r-lg transition cursor-pointer">
                                 Max
                             </button>
                         </div>
                         <button onclick="stake()"
-                            class="w-full px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">
+                            class="w-full px-4 py-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-lg transition cursor-pointer">
                             Confirm Stake
                         </button>
                     </div>
@@ -186,12 +188,12 @@
                                 class="flex-1 px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-sky-500"
                                 placeholder="Enter amount">
                             <button id="maxStakeAmount" onclick="setMaxUnstakeAmount()"
-                                class="px-4 py-2 bg-sky-600 text-white rounded-r-lg hover:bg-sky-700 transition">
+                                class="px-4 py-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-r-lg transition cursor-pointer">
                                 Max
                             </button>
                         </div>
                         <button onclick="unstakePartial()"
-                            class="w-full px-4 py-2 bg-sky-600 text-white rounded-lg hover:bg-sky-700 transition">
+                            class="w-full px-4 py-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-lg transition cursor-pointer">
                             Confirm Unstake
                         </button>
                     </div>

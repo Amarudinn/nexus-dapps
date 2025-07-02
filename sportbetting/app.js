@@ -2,8 +2,73 @@ const menuButton = document.querySelector('[data-collapse-toggle="navbar-cta"]')
 const menu = document.getElementById('navbar-cta');
 
 menuButton.addEventListener('click', () => {
-	menu.classList.toggle('hidden');
+    menu.classList.toggle('hidden');
 });
+
+function parseWIBTime(wibText) {
+    const currentYear = new Date().getFullYear();
+    const parts = wibText.split(' ');
+    const formatted = `${parts[1]} ${parts[2]} ${currentYear} ${parts[3]} +07:00`;
+    return new Date(formatted);
+}
+
+document.querySelectorAll('.wib-time').forEach(el => {
+    const originalText = el.textContent.trim();
+    const localDate = parseWIBTime(originalText);
+
+    const options = {
+        weekday: "short",
+        day: "2-digit",
+        month: "short",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+    };
+
+    const localTimeString = localDate.toLocaleString(undefined, options);
+    el.textContent = localTimeString;
+});
+
+function checkMatchVisibility() {
+    const now = new Date();
+
+    document.querySelectorAll('.match-container').forEach(el => {
+        const showTimeStr = el.getAttribute('data-showtime');
+        if (!showTimeStr) return;
+
+        const showTime = new Date(showTimeStr);
+        if (now >= showTime && el.classList.contains('hidden')) {
+            el.classList.remove('hidden');
+        }
+    });
+}
+
+checkMatchVisibility();
+
+setInterval(checkMatchVisibility, 10000);
+
+function checkMatchVisibility() {
+    const now = new Date();
+
+    document.querySelectorAll('.match-container').forEach(el => {
+        const showTimeStr = el.getAttribute('data-showtime');
+        const hideTimeStr = el.getAttribute('data-hidetime');
+
+        const showTime = showTimeStr ? new Date(showTimeStr) : null;
+        const hideTime = hideTimeStr ? new Date(hideTimeStr) : null;
+
+        const shouldShow = (!showTime || now >= showTime) && (!hideTime || now < hideTime);
+
+        if (shouldShow && el.classList.contains('hidden')) {
+            el.classList.remove('hidden');
+        } else if (!shouldShow && !el.classList.contains('hidden')) {
+            el.classList.add('hidden');
+        }
+    });
+}
+
+checkMatchVisibility();
+setInterval(checkMatchVisibility, 10000);
 
 const canvas = document.getElementById("ballCanvas");
 const ctx = canvas.getContext("2d");
@@ -55,473 +120,509 @@ function animate() {
 animate();
 
 const CONTRACTS = {
-    'Benfica vs Chelsea': '0x6348f1E411a5A6C488347994822a4cBf04b3280B', // Contract Satu
-    'PSG vs Inter Miami': '0x1b38CD8dD6caD7088E35C89eD9C22fdCadb5c80e' // Contract Dua
+    'M. Sakkari vs E. Rybakina': '0x133b67279f7E7835a7Dc5aE118091b461717c7cA', // Contract Satu
+    'V. Kudermetova vs E. Navarro': '0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49', // Contract Dua
+    'G. Dimitrov vs C. Moutet': '0xd25EcA3e4C874376d99f795980b822f4b06f31c9', // Contract Tiga
+    'M. Giron vs J. Mensik': '0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF', // Contract Empat
+    'Fluminense vs Al-Hilal': '0x8b9e0E7fe46b4e494bc9645DEf8Ae18D0E632595', // Contract Lima
+    'Palmeiras vs Chelsea': '0x630Bd4318d998c6DA70fDD6fAaf7DE16c1555526', // Contract Enam
+    'PSG vs Bayern Munich': '0xB4d56b7ee390B981D116810C109515Fb41b64be4', // Contract Tujuh
+    'Real Madrid vs Dortmund': '0x2c3d9b6F02e056461C76185bfE1D3214be0e4aFD' // Contract Delapan
 };
 
 const CONTRACT_ABI = [
-    {
-        "inputs": [],
-        "name": "betDraw",
-        "outputs": [],
-        "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "betTeamA",
-        "outputs": [],
-        "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "betTeamB",
-        "outputs": [],
-        "stateMutability": "payable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "claimReward",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "closeBetting",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "openBetting",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "resetGame",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "_oddsA",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "_oddsB",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "_oddsDraw",
-                "type": "uint256"
-            }
-        ],
-        "name": "setOdds",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "outcome",
-                "type": "uint256"
-            }
-        ],
-        "name": "setWinner",
-        "outputs": [],
-        "stateMutability": "nonpayable",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "stateMutability": "nonpayable",
-        "type": "constructor"
-    },
-    {
-        "stateMutability": "payable",
-        "type": "receive"
-    },
-    {
-        "inputs": [],
-        "name": "bettingOpen",
-        "outputs": [
-            {
-                "internalType": "bool",
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "drawBettors",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "finalResult",
-        "outputs": [
-            {
-                "internalType": "enum SportBetting.Outcome",
-                "name": "",
-                "type": "uint8"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "getDrawBettors",
-        "outputs": [
-            {
-                "internalType": "address[]",
-                "name": "",
-                "type": "address[]"
-            },
-            {
-                "internalType": "uint256[]",
-                "name": "",
-                "type": "uint256[]"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "user",
-                "type": "address"
-            }
-        ],
-        "name": "getPendingReward",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "getTeamABettors",
-        "outputs": [
-            {
-                "internalType": "address[]",
-                "name": "",
-                "type": "address[]"
-            },
-            {
-                "internalType": "uint256[]",
-                "name": "",
-                "type": "uint256[]"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "getTeamBBettors",
-        "outputs": [
-            {
-                "internalType": "address[]",
-                "name": "",
-                "type": "address[]"
-            },
-            {
-                "internalType": "uint256[]",
-                "name": "",
-                "type": "uint256[]"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "user",
-                "type": "address"
-            }
-        ],
-        "name": "getUserBets",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "hasClaimed",
-        "outputs": [
-            {
-                "internalType": "bool",
-                "name": "",
-                "type": "bool"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "maxBet",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "minBet",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "oddsDraw",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "oddsTeamA",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "oddsTeamB",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [],
-        "name": "owner",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "pendingClaimers",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "pendingRewards",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "players",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "teamABettors",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "uint256",
-                "name": "",
-                "type": "uint256"
-            }
-        ],
-        "name": "teamBBettors",
-        "outputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    },
-    {
-        "inputs": [
-            {
-                "internalType": "address",
-                "name": "",
-                "type": "address"
-            }
-        ],
-        "name": "userBets",
-        "outputs": [
-            {
-                "internalType": "uint256",
-                "name": "teamA",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "teamB",
-                "type": "uint256"
-            },
-            {
-                "internalType": "uint256",
-                "name": "draw",
-                "type": "uint256"
-            }
-        ],
-        "stateMutability": "view",
-        "type": "function"
-    }
+	{
+		"inputs": [],
+		"name": "betDraw",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "betTeamA",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "betTeamB",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "claimReward",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "closeBetting",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "openBetting",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "resetGame",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_oddsA",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_oddsB",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_oddsDraw",
+				"type": "uint256"
+			}
+		],
+		"name": "setOdds",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "outcome",
+				"type": "uint256"
+			}
+		],
+		"name": "setWinner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "outcome",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "from",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "to",
+				"type": "uint256"
+			}
+		],
+		"name": "setWinnerBatch",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
+	},
+	{
+		"inputs": [],
+		"name": "bettingOpen",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "drawBettors",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "finalResult",
+		"outputs": [
+			{
+				"internalType": "enum SportBetting.Outcome",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getDrawBettors",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "getPendingReward",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTeamABettors",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTeamBBettors",
+		"outputs": [
+			{
+				"internalType": "address[]",
+				"name": "",
+				"type": "address[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "getUserBets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "hasClaimed",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "maxBet",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "minBet",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "oddsDraw",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "oddsTeamA",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "oddsTeamB",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "pendingClaimers",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "pendingRewards",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "players",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "teamABettors",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "teamBBettors",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "userBets",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "teamA",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "teamB",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "draw",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
 ];
 
 let web3;
@@ -539,8 +640,14 @@ window.addEventListener('DOMContentLoaded', async function () {
     connectButton.addEventListener('click', initWeb3);
 
     if (typeof CONTRACTS !== 'undefined') {
-        document.getElementById('contractSatu').textContent = shortenAddress(CONTRACTS['Benfica vs Chelsea']);
-        document.getElementById('contractDua').textContent = shortenAddress(CONTRACTS['PSG vs Inter Miami']);
+        document.getElementById('contractSatu').textContent = shortenAddress(CONTRACTS['M. Sakkari vs E. Rybakina']);
+        document.getElementById('contractDua').textContent = shortenAddress(CONTRACTS['V. Kudermetova vs E. Navarro']);
+        document.getElementById('contractTiga').textContent = shortenAddress(CONTRACTS['G. Dimitrov vs C. Moutet']);
+        document.getElementById('contractEmpat').textContent = shortenAddress(CONTRACTS['M. Giron vs J. Mensik']);
+        document.getElementById('contractLima').textContent = shortenAddress(CONTRACTS['Fluminense vs Al-Hilal']);
+        document.getElementById('contractEnam').textContent = shortenAddress(CONTRACTS['Palmeiras vs Chelsea']);
+        document.getElementById('contractTujuh').textContent = shortenAddress(CONTRACTS['PSG vs Bayern Munich']);
+        document.getElementById('contractDelapan').textContent = shortenAddress(CONTRACTS['Real Madrid vs Dortmund']);
     }
 });
 
@@ -715,7 +822,7 @@ async function updateGasInfo() {
 
 function calculateWin() {
     const amount = parseFloat(document.getElementById('betAmount').value) || 0;
-    const winAmount = (amount * currentOdds).toFixed(1);
+    const winAmount = (amount * currentOdds).toFixed(2);
     document.getElementById('potentialWin').textContent = winAmount + ' NEX';
 }
 
@@ -875,7 +982,7 @@ async function openRewardModal() {
       <p class="modal-text">Reward: ${ethReward.toFixed(2)} NEX</p>
     </div>
     <div class="flex justify-center items-center">
-        <button class="claim-btn px-4 py-2 bg-sky-600 text-sm text-white rounded hover:bg-sky-700 transition flex items-center justify-center cursor-pointer" data-address="${address}">Claim</button>        
+        <button class="claim-btn px-4 py-2 bg-gradient-to-r from-sky-500 to-sky-700 text-sm text-white rounded transition flex items-center justify-center cursor-pointer" data-address="${address}">Claim</button>        
     </div>
   </div>
                     `;
@@ -885,7 +992,7 @@ async function openRewardModal() {
             }
         }
 
-        rewardsContainer.innerHTML = hasRewards ? rewardsHtml : '<p>No rewards available</p>';
+        rewardsContainer.innerHTML = hasRewards ? rewardsHtml : '<p class="text-white">No rewards available</p>';
 
         document.querySelectorAll('.claim-btn').forEach(btn => {
             btn.addEventListener('click', async function () {
@@ -1005,12 +1112,24 @@ window.addEventListener('load', () => {
     if (typeof window.ethereum !== 'undefined') {
         window.web3 = new Web3(window.ethereum);
 
-        updateStatusUI(CONTRACTS['Benfica vs Chelsea'], 'status-contract-satu', 'text-contract-satu', 'Benfica vs Chelsea');
-        updateStatusUI(CONTRACTS['PSG vs Inter Miami'], 'status-contract-dua', 'text-contract-dua', 'PSG vs Inter Miami');
+        updateStatusUI(CONTRACTS['M. Sakkari vs E. Rybakina'], 'status-contract-satu', 'text-contract-satu', 'M. Sakkari vs E. Rybakina');
+        updateStatusUI(CONTRACTS['V. Kudermetova vs E. Navarro'], 'status-contract-dua', 'text-contract-dua', 'V. Kudermetova vs E. Navarro');
+        updateStatusUI(CONTRACTS['G. Dimitrov vs C. Moutet'], 'status-contract-tiga', 'text-contract-tiga', 'G. Dimitrov vs C. Moutet');
+        updateStatusUI(CONTRACTS['M. Giron vs J. Mensik'], 'status-contract-empat', 'text-contract-empat', 'M. Giron vs J. Mensik');
+        updateStatusUI(CONTRACTS['Fluminense vs Al-Hilal'], 'status-contract-lima', 'text-contract-lima', 'Fluminense vs Al-Hilal');
+        updateStatusUI(CONTRACTS['Palmeiras vs Chelsea'], 'status-contract-enam', 'text-contract-enam', 'Palmeiras vs Chelsea');
+        updateStatusUI(CONTRACTS['PSG vs Bayern Munich'], 'status-contract-tujuh', 'text-contract-tujuh', 'PSG vs Bayern Munich');
+        updateStatusUI(CONTRACTS['Real Madrid vs Dortmund'], 'status-contract-delapan', 'text-contract-delapan', 'Real Madrid vs Dortmund');
 
         setInterval(() => {
-            updateStatusUI(CONTRACTS['Benfica vs Chelsea'], 'status-contract-satu', 'text-contract-satu', 'Benfica vs Chelsea');
-            updateStatusUI(CONTRACTS['PSG vs Inter Miami'], 'status-contract-dua', 'text-contract-dua', 'PSG vs Inter Miami');
+            updateStatusUI(CONTRACTS['M. Sakkari vs E. Rybakina'], 'status-contract-satu', 'text-contract-satu', 'M. Sakkari vs E. Rybakina');
+            updateStatusUI(CONTRACTS['V. Kudermetova vs E. Navarro'], 'status-contract-dua', 'text-contract-dua', 'V. Kudermetova vs E. Navarro');
+            updateStatusUI(CONTRACTS['G. Dimitrov vs C. Moutet'], 'status-contract-tiga', 'text-contract-tiga', 'G. Dimitrov vs C. Moutet');
+            updateStatusUI(CONTRACTS['M. Giron vs J. Mensik'], 'status-contract-empat', 'text-contract-empat', 'M. Giron vs J. Mensik');
+            updateStatusUI(CONTRACTS['Fluminense vs Al-Hilal'], 'status-contract-lima', 'text-contract-lima', 'Fluminense vs Al-Hilal');
+            updateStatusUI(CONTRACTS['Palmeiras vs Chelsea'], 'status-contract-enam', 'text-contract-enam', 'Palmeiras vs Chelsea');
+            updateStatusUI(CONTRACTS['PSG vs Bayern Munich'], 'status-contract-tujuh', 'text-contract-tujuh', 'PSG vs Bayern Munich');
+            updateStatusUI(CONTRACTS['Real Madrid vs Dortmund'], 'status-contract-delapan', 'text-contract-delapan', 'Real Madrid vs Dortmund');
         }, 1000); // 1000ms = 1 detik
     } else {
         Swal.fire({
@@ -1062,7 +1181,7 @@ document.getElementById("showHistoryBtn").addEventListener("click", async () => 
                 const status = userTeam === match.winner ? "Win" : "Lost";
                 const statusColor = status === "Win" ? "bg-green-600" : "bg-red-600";
 
-                const odds = parseFloat(match.odd);
+                const odds = parseFloat(match.odds[userTeam]);
                 const betAmount = parseFloat(userBet.bet);
                 const payout = status === "Win" ? (betAmount * odds).toFixed(2) : "0.00";
 
@@ -1106,7 +1225,7 @@ document.getElementById("showHistoryBtn").addEventListener("click", async () => 
               <!-- Kanan: Odd & Payout -->
               <div class="text-right">
                 <div class="text-gray-400">Odd</div>
-                <div class="text-white font-semibold">${match.odd}</div>
+                <div class="text-white font-semibold">${match.odds[userTeam]}</div>
 
                 <div class="text-gray-400 mt-1">Payout</div>
                 <div class="text-blue-400 font-semibold">${payout} NEX</div>

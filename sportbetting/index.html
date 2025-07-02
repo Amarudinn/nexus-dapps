@@ -33,7 +33,7 @@
             </a>
             <div class="flex justify-between items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <div
-                    class="flex items-center py-1 px-2 bg-sky-600 text-white hover:bg-sky-700 rounded-md cursor-pointer">
+                    class="flex items-center py-1 px-2 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 text-white rounded-md cursor-pointer">
                     <img src="/images/metamask.png" alt="images" class="w-5 h-5 mr-1">
                     <button id="connectButton" class="cursor-pointer" onclick="initWeb3()">Connect Wallet</button>
                 </div>
@@ -52,7 +52,7 @@
                 <ul
                     class="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-500 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
                     <li>
-                        <a href="index.html"
+                        <a href="/index.html"
                             class="block py-2 px-3 rounded-sm bg-transparent text-slate-300 hover:bg-gray-700/80 md:py-1.5 md:px-4">Stake</a>
                     </li>
                     <!-- <li>
@@ -74,41 +74,40 @@
         </div>
     </nav>
 
-    <!-- <button id="connectWallet" class="wallet-btn connect-wallet">
-        Connect Wallet
-    </button>
-    <div id="walletAddress" class="wallet-btn wallet-connected hidden">
-        <span id="walletShortAddress"></span>
-    </div> -->
-
     <div class="container mx-auto p-4 max-width mt-16 container-utama">
 
         <div class="mb-4 flex flex-col md:flex-row gap-4">
             <div class="grid grid-cols-2 gap-4">
                 <div id="tampilanReward"
-                class="py-1 px-3 flex justify-center items-center rounded-md bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-md cursor-pointer">
-                <i class="fa-solid fa-sack-dollar mr-1 text-white"></i>
-                <p class="text-sm font-semibold text-white">Rewards</p>
+                    class="py-2 px-3 flex justify-center items-center rounded-md bg-gradient-to-r from-amber-400 via-yellow-500 to-orange-500 hover:from-yellow-500 hover:to-yellow-600 transition-all duration-300 shadow-md cursor-pointer">
+                    <i class="fa-solid fa-sack-dollar mr-1 text-white"></i>
+                    <p class="text-sm font-semibold text-white">Rewards</p>
+                </div>
+
+                <div id="showHistoryBtn"
+                    class="py-2 px-3 flex justify-center items-center rounded-md bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 transition-all duration-300 shadow-md cursor-pointer">
+                    <i class="fa-solid fa-clock-rotate-left mr-1 text-white"></i>
+                    <p class="text-sm font-semibold text-white">History</p>
+                </div>
             </div>
 
-            <div id="showHistoryBtn"
-                class="py-1 px-3 flex justify-center items-center rounded-md bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 transition-all duration-300 shadow-md cursor-pointer">
-                <i class="fa-solid fa-clock-rotate-left mr-1 text-white"></i>
-                <p class="text-sm font-semibold text-white">History</p>
-            </div>
-            </div>
-
-            <div class="py-1 px-3 flex justify-center items-center rounded-md bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 transition-all duration-300 shadow-md cursor-pointer">
-                <i class="fa-solid fa-wallet mr-1 text-white"></i><span id="walletBalance" class="text-sm font-semibold text-white">Balance</span>
+            <div
+                class="py-2 px-3 flex justify-center items-center rounded-md bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:to-cyan-700 transition-all duration-300 shadow-md cursor-pointer">
+                <i class="fa-solid fa-wallet mr-1 text-white"></i><span id="walletBalance"
+                    class="text-sm font-semibold text-white">Balance</span>
             </div>
 
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4">
-            <!-- Benfica vs Chelsea Match -->
-            <div class="match-container px-4 pb-4 pt-2 mb-4 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-xl shadow-lg">
+
+            <!-- UBAH -->
+            <!-- M. Sakkari vs E. Rybakina -->
+            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-xl shadow-lg"
+                data-showtime="2025-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
                 <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300 border-b border-slate-300">Football, FIFA Club World Cup, Round 16
+                    <!-- UBAH -->
+                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Round 64
                     </p>
                     <div class="flex items-center">
                         <div id="status-contract-satu" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
@@ -117,52 +116,58 @@
                 </div>
                 <div class="mb-3">
                     <div id="team-container" class="flex items-center justify-between w-full max-w-md mx-auto">
+                        <!-- UBAH -->
                         <div id="team-left"
                             class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
-                            <h2 class="font-bold text-[16px] text-lg">Benfica</h2>
+                            <h2 class="font-bold text-[16px] text-lg">M. Sakkari</h2>
                         </div>
 
                         <div id="team-right"
                             class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
-                            <h2 class="font-bold text-[16px] text-lg">Chelsea</h2>
+                            <h2 class="font-bold text-[16px] text-lg">E. Rybakina</h2>
                         </div>
 
                     </div>
                 </div>
 
                 <div class="text-center mb-4">
-                    <p class="text-slate-300">Mon 30 Jun 04:00</p>
+                    <!-- UBAH -->
+                    <p class="text-slate-300 wib-time">Thu 3 Jul 17:00</p>
                     <p class="text-xs text-slate-300">contract: <span id="contractSatu"
                             class="font-mono text-xs text-slate-300">loading...</span></p>
                 </div>
 
-                <div class="grid grid-cols-3 gap-2">
+                <!-- UBAH -->
+                <div class="grid grid-cols-2 gap-2">
                     <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
-                        onclick="openBetModal('Draw', '1.5', 'Benfica vs Chelsea', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.5</p>
+                        onclick="openBetModal('M. Sakkari', '3', 'M. Sakkari vs E. Rybakina', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">3</p>
                     </div>
-                    <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
+                    <!-- <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
                         onclick="openBetModal('Draw', '2.8', 'Benfica vs Chelsea', 'betDraw')">
                         <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">2.8</p>
-                    </div>
+                    </div> -->
                     <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
-                        onclick="openBetModal('Chelsea', '1.9', 'Benfica vs Chelsea', 'betTeamB')">
-                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.9</p>
+                        onclick="openBetModal('E. Rybakina', '1.1', 'M. Sakkari vs E. Rybakina', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.1</p>
                     </div>
 
                 </div>
             </div>
 
-            <!-- PSG vs Inter Miami Match -->
-            <div class="match-container px-4 pb-4 pt-2 mb-4 bg-gray-800">
+            <!-- UBAH -->
+            <!-- V. Kudermetova vs E. Navarro Match -->
+            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gray-800"
+                data-showtime="2025-07-02T15:11:00+07:00" data-hidetime="2026-07-02T15:11:30+07:00">
                 <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300 border-b border-slate-300">Football, FIFA Club World Cup, Round 16
+                    <!-- UBAH -->
+                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Round 64
                     </p>
                     <div class="flex items-center">
                         <div id="status-contract-dua" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
@@ -171,6 +176,297 @@
                 </div>
                 <div class="mb-3">
                     <div class="flex items-center justify-between">
+                        <!-- UBAH -->
+                        <div id="team-left"
+                            class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">V. Kudermetova</h2>
+                        </div>
+
+                        <div id="team-right"
+                            class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">E. Navarro</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-4">
+                    <!-- UBAH -->
+                    <p class="text-slate-300 wib-time">Thu 3 Jul 17:00</p>
+                    <p class="text-xs text-slate-300">contract: <span id="contractDua"
+                            class="font-mono text-xs text-slate-300">loading...</span></p>
+                </div>
+
+                <!-- UBAH -->
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
+                        onclick="openBetModal('V. Kudermetova', '1.9', 'V. Kudermetova vs E. Navarro', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.9</p>
+                    </div>
+                    <!-- <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
+                        onclick="openBetModal('Draw', '3.5', 'PSG vs Inter Miami', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">3.5</p>
+                    </div> -->
+                    <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
+                        onclick="openBetModal('E. Navarro', '1.4', 'V. Kudermetova vs E. Navarro', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.4</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UBAH -->
+            <!-- G. Dimitrov vs C. Moutet Match -->
+            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gray-800"
+                data-showtime="2025-07-02T15:11:00+07:00" data-hidetime="2026-07-02T15:11:30+07:00">
+                <div class="pb-2 flex justify-between items-center">
+                    <!-- UBAH -->
+                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Round 64
+                    </p>
+                    <div class="flex items-center">
+                        <div id="status-contract-tiga" ubah class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
+                        <span id="text-contract-tiga" class="text-sm text-yellow-500"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="flex items-center justify-between">
+                        <!-- UBAH -->
+                        <div id="team-left"
+                            class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">G. Dimitrov</h2>
+                        </div>
+
+                        <div id="team-right"
+                            class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">C. Moutet</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-4">
+                    <!-- UBAH -->
+                    <p class="text-slate-300 wib-time">Thu 3 Jul 17:00</p>
+                    <p class="text-xs text-slate-300">contract: <span id="contractTiga"
+                            class="font-mono text-xs text-slate-300">loading...</span></p>
+                </div>
+
+                <!-- UBAH -->
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
+                        onclick="openBetModal('G. Dimitrov', '1.4', 'G. Dimitrov vs C. Moutet', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.4</p>
+                    </div>
+                    <!-- <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
+                        onclick="openBetModal('Draw', '3.5', 'PSG vs Inter Miami', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">3.5</p>
+                    </div> -->
+                    <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
+                        onclick="openBetModal('C. Moutet', '1.9', 'G. Dimitrov vs C. Moutet', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.9</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UBAH -->
+            <!-- M. Giron vs J. Mensik Match -->
+            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gray-800"
+                data-showtime="2025-07-02T15:11:00+07:00" data-hidetime="2026-07-02T15:11:30+07:00">
+                <div class="pb-2 flex justify-between items-center">
+                    <!-- UBAH -->
+                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Round 64
+                    </p>
+                    <div class="flex items-center">
+                        <div id="status-contract-empat" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
+                        <span id="text-contract-empat" class="text-sm text-yellow-500"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="flex items-center justify-between">
+                        <!-- UBAH -->
+                        <div id="team-left"
+                            class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">M. Giron</h2>
+                        </div>
+
+                        <div id="team-right"
+                            class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">J. Mensik</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-4">
+                    <!-- UBAH -->
+                    <p class="text-slate-300 wib-time">Thu 3 Jul 17:00</p>
+                    <p class="text-xs text-slate-300">contract: <span id="contractEmpat"
+                            class="font-mono text-xs text-slate-300">loading...</span></p>
+                </div>
+
+                <!-- UBAH -->
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
+                        onclick="openBetModal('M. Giron', '1.9', 'M. Giron vs J. Mensik', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.9</p>
+                    </div>
+                    <!-- <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
+                        onclick="openBetModal('Draw', '3.5', 'PSG vs Inter Miami', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">3.5</p>
+                    </div> -->
+                    <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
+                        onclick="openBetModal('J. Mensik', '1.4', 'M. Giron vs J. Mensik', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.4</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UBAH -->
+            <!-- Fluminense vs Al-Hilal Match -->
+            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gray-800"
+                data-showtime="2025-07-02T15:11:00+07:00" data-hidetime="2026-07-02T15:11:30+07:00">
+                <div class="pb-2 flex justify-between items-center">
+                    <!-- UBAH -->
+                    <p class="text-xs text-slate-300">Football - Club World Cup, Quarter Finals - 1X2
+                    </p>
+                    <div class="flex items-center">
+                        <div id="status-contract-lima" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
+                        <span id="text-contract-lima" class="text-sm text-yellow-500"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="flex items-center justify-between">
+                        <!-- UBAH -->
+                        <div id="team-left"
+                            class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">Fluminense</h2>
+                        </div>
+
+                        <div id="team-right"
+                            class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">Al-Hilal</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-4">
+                    <!-- UBAH -->
+                    <p class="text-slate-300 wib-time">Sat 5 Jul 02:00</p>
+                    <p class="text-xs text-slate-300">contract: <span id="contractLima"
+                            class="font-mono text-xs text-slate-300">loading...</span></p>
+                </div>
+
+                <!-- UBAH -->
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
+                        onclick="openBetModal('Fluminense', '2.4', 'Fluminense vs Al-Hilal', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">2.4</p>
+                    </div>
+                    <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
+                        onclick="openBetModal('Draw', '3', 'Fluminense vs Al-Hilal', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">3</p>
+                    </div>
+                    <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
+                        onclick="openBetModal('Al-Hilal', '1.9', 'Fluminense vs Al-Hilal', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.9</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UBAH -->
+            <!-- Palmeiras vs Chelsea Match -->
+            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gray-800"
+                data-showtime="2025-07-02T15:11:00+07:00" data-hidetime="2026-07-02T15:11:30+07:00">
+                <div class="pb-2 flex justify-between items-center">
+                    <!-- UBAH -->
+                    <p class="text-xs text-slate-300">Football - Club World Cup, Quarter Finals - 1X2
+                    </p>
+                    <div class="flex items-center">
+                        <div id="status-contract-enam" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
+                        <span id="text-contract-enam" class="text-sm text-yellow-500"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="flex items-center justify-between">
+                        <!-- UBAH -->
+                        <div id="team-left"
+                            class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">Palmeiras</h2>
+                        </div>
+
+                        <div id="team-right"
+                            class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">Chelsea</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-4">
+                    <!-- UBAH -->
+                    <p class="text-slate-300 wib-time">Sat 5 Jul 08:00</p>
+                    <p class="text-xs text-slate-300">contract: <span id="contractEnam"
+                            class="font-mono text-xs text-slate-300">loading...</span></p>
+                </div>
+
+                <!-- UBAH -->
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
+                        onclick="openBetModal('Palmeiras', '2.5', 'Palmeiras vs Chelsea', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">2.5</p>
+                    </div>
+                    <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
+                        onclick="openBetModal('Draw', '3', 'Palmeiras vs Chelsea', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">3</p>
+                    </div>
+                    <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
+                        onclick="openBetModal('Chelsea', '1.8', 'Palmeiras vs Chelsea', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.8</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UBAH -->
+            <!-- PSG vs Bayern Munich Match -->
+            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gray-800"
+                data-showtime="2025-07-02T15:11:00+07:00" data-hidetime="2026-07-02T15:11:30+07:00">
+                <div class="pb-2 flex justify-between items-center">
+                    <!-- UBAH -->
+                    <p class="text-xs text-slate-300">Football - Club World Cup, Quarter Finals - 1X2
+                    </p>
+                    <div class="flex items-center">
+                        <div id="status-contract-tujuh" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
+                        <span id="text-contract-tujuh" class="text-sm text-yellow-500"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="flex items-center justify-between">
+                        <!-- UBAH -->
                         <div id="team-left"
                             class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
                             <h2 class="font-bold text-[16px] text-lg">PSG</h2>
@@ -178,225 +474,106 @@
 
                         <div id="team-right"
                             class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
-                            <h2 class="font-bold text-[16px] text-lg">Inter Miami</h2>
+                            <h2 class="font-bold text-[16px] text-lg">Bayern Munich</h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center mb-4">
-                    <p class="text-slate-300">Mon 30 Jun 04:00</p>
-                    <p class="text-xs text-slate-300">contract: <span id="contractDua"
+                    <!-- UBAH -->
+                    <p class="text-slate-300 wib-time">Sat 5 Jul 23:00</p>
+                    <p class="text-xs text-slate-300">contract: <span id="contractTujuh"
                             class="font-mono text-xs text-slate-300">loading...</span></p>
                 </div>
 
+                <!-- UBAH -->
                 <div class="grid grid-cols-3 gap-2">
                     <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
-                        onclick="openBetModal('PSG', '1.5', 'PSG vs Inter Miami', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.5</p>
+                        onclick="openBetModal('PSG', '1.9', 'PSG vs Bayern Munich', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.9</p>
                     </div>
                     <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
-                        onclick="openBetModal('Draw', '3.5', 'PSG vs Inter Miami', 'betDraw')">
-                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">3.5</p>
+                        onclick="openBetModal('Draw', '3', 'PSG vs Bayern Munich', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">3</p>
                     </div>
                     <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
-                        onclick="openBetModal('Inter Miami', '2.5', 'PSG vs Inter Miami', 'betTeamB')">
-                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">2.5</p>
+                        onclick="openBetModal('Bayern Munich', '2.4', 'PSG vs Bayern Munich', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">2.4</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Benfica vs Chelsea Match -->
-            <div class="match-container px-4 pb-4 pt-2 mb-4 bg-gray-800">
+            <!-- UBAH -->
+            <!-- Real Madrid vs Dortmund Match -->
+            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gray-800"
+                data-showtime="2025-07-02T15:11:00+07:00" data-hidetime="2026-07-02T15:11:30+07:00">
                 <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300 border-b border-slate-300">Football, FIFA Club World Cup, Round 16
+                    <!-- UBAH -->
+                    <p class="text-xs text-slate-300">Football - Club World Cup, Quarter Finals - 1X2
                     </p>
                     <div class="flex items-center">
-                        <div id="status-contract-satu" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
-                        <span id="text-contract-satu" class="text-sm text-yellow-500"></span>
+                        <div id="status-contract-delapan" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
+                        <span id="text-contract-delapan" class="text-sm text-yellow-500"></span>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="flex items-center justify-between">
-                        <div
-                            class="text-slate-200 bg-[#0284c7]/80 backdrop-blur-sm w-full flex justify-center items-center py-2 rounded-l">
-                            <h2 class="font-bold text-[16px] text-lg">Benfica</h2>
+                        <!-- UBAH -->
+                        <div id="team-left"
+                            class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">Real Madrid</h2>
                         </div>
-                        <div
-                            class="text-slate-200 bg-[#dc2626]/80 w-full flex justify-center items-center py-2 rounded-r">
-                            <h2 class="font-bold text-[16px] text-lg">Chelsea</h2>
+
+                        <div id="team-right"
+                            class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">Dortmund</h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center mb-4">
-                    <p class="text-slate-300">Mon 30 Jun 04:00</p>
-                    <p class="text-xs text-slate-300">contract: <span id="contractSatu"
+                    <!-- UBAH -->
+                    <p class="text-slate-300 wib-time">Sun 6 Jul 03:00</p>
+                    <p class="text-xs text-slate-300">contract: <span id="contractDelapan"
                             class="font-mono text-xs text-slate-300">loading...</span></p>
                 </div>
 
+                <!-- UBAH -->
                 <div class="grid grid-cols-3 gap-2">
-                    <div class="odds-box bg-blue-50 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Benfica', '1.9', 'Benfica vs Chelsea', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80">1.9</p>
+                    <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
+                        onclick="openBetModal('Real Madrid', '1.4', 'Real Madrid vs Dortmund', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.4</p>
                     </div>
-                    <div class="odds-box bg-gray-100 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Draw', '2.8', 'Benfica vs Chelsea', 'betDraw')">
-                        <p class="font-bold text-slate-700/90">2.8</p>
+                    <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
+                        onclick="openBetModal('Draw', '3', 'Real Madrid vs Dortmund', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">3</p>
                     </div>
-                    <div class="odds-box bg-blue-50 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Chelsea', '1.9', 'Benfica vs Chelsea', 'betTeamB')">
-                        <p class="font-bold text-red-600/80">1.9</p>
+                    <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
+                        onclick="openBetModal('Dortmund', '3', 'Real Madrid vs Dortmund', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">3</p>
                     </div>
                 </div>
             </div>
 
-            <!-- PSG vs Inter Miami Match -->
-            <div class="match-container px-4 pb-4 pt-2 mb-4 bg-gray-800">
-                <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300 border-b border-slate-300">Football, FIFA Club World Cup, Round 16
-                    </p>
-                    <div class="flex items-center">
-                        <div id="status-contract-dua" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
-                        <span id="text-contract-dua" class="text-sm text-yellow-500"></span>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <div class="flex items-center justify-between">
-                        <div
-                            class="text-slate-200 bg-[#0284c7]/80 w-full flex justify-center items-center py-2 rounded-l">
-                            <h2 class="font-bold text-[16px] text-lg">PSG</h2>
-                        </div>
-                        <div
-                            class="text-slate-200 bg-[#dc2626]/80 w-full flex justify-center items-center py-2 rounded-r">
-                            <h2 class="font-bold text-[16px] text-lg">Inter Miami</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mb-4">
-                    <p class="text-slate-300">Mon 30 Jun 04:00</p>
-                    <p class="text-xs text-slate-300">contract: <span id="contractDua"
-                            class="font-mono text-xs text-slate-300">loading...</span></p>
-                </div>
-
-                <div class="grid grid-cols-3 gap-2">
-                    <div class="odds-box bg-blue-50 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('PSG', '1.5', 'PSG vs Inter Miami', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80">1.5</p>
-                    </div>
-                    <div class="odds-box bg-gray-100 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Draw', '3.5', 'PSG vs Inter Miami', 'betDraw')">
-                        <p class="font-bold text-slate-700/90">3.5</p>
-                    </div>
-                    <div class="odds-box bg-blue-50 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Inter Miami', '2.5', 'PSG vs Inter Miami', 'betTeamB')">
-                        <p class="font-bold text-red-600/80">2.5</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Benfica vs Chelsea Match -->
-            <div class="match-container px-4 pb-4 pt-2 mb-4 bg-gray-800">
-                <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300 border-b border-slate-300">Football, FIFA Club World Cup, Round 16
-                    </p>
-                    <div class="flex items-center">
-                        <div id="status-contract-satu" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
-                        <span id="text-contract-satu" class="text-sm text-yellow-500"></span>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <div class="flex items-center justify-between">
-                        <div
-                            class="text-slate-200 bg-[#0284c7]/80 backdrop-blur-sm w-full flex justify-center items-center py-2 rounded-l">
-                            <h2 class="font-bold text-[16px] text-lg">Benfica</h2>
-                        </div>
-                        <div
-                            class="text-slate-200 bg-[#dc2626]/80 w-full flex justify-center items-center py-2 rounded-r">
-                            <h2 class="font-bold text-[16px] text-lg">Chelsea</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mb-4">
-                    <p class="text-slate-300">Mon 30 Jun 04:00</p>
-                    <p class="text-xs text-slate-300">contract: <span id="contractSatu"
-                            class="font-mono text-xs text-slate-300">loading...</span></p>
-                </div>
-
-                <div class="grid grid-cols-3 gap-2">
-                    <div class="odds-box bg-blue-50 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Benfica', '1.9', 'Benfica vs Chelsea', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80">1.9</p>
-                    </div>
-                    <div class="odds-box bg-gray-100 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Draw', '2.8', 'Benfica vs Chelsea', 'betDraw')">
-                        <p class="font-bold text-slate-700/90">2.8</p>
-                    </div>
-                    <div class="odds-box bg-blue-50 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Chelsea', '1.9', 'Benfica vs Chelsea', 'betTeamB')">
-                        <p class="font-bold text-red-600/80">1.9</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PSG vs Inter Miami Match -->
-            <div class="match-container px-4 pb-4 pt-2 mb-4 bg-gray-800">
-                <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300 border-b border-slate-300">Football, FIFA Club World Cup, Round 16
-                    </p>
-                    <div class="flex items-center">
-                        <div id="status-contract-dua" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
-                        <span id="text-contract-dua" class="text-sm text-yellow-500"></span>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <div class="flex items-center justify-between">
-                        <div
-                            class="text-slate-200 bg-[#0284c7]/80 w-full flex justify-center items-center py-2 rounded-l">
-                            <h2 class="font-bold text-[16px] text-lg">PSG</h2>
-                        </div>
-                        <div
-                            class="text-slate-200 bg-[#dc2626]/80 w-full flex justify-center items-center py-2 rounded-r">
-                            <h2 class="font-bold text-[16px] text-lg">Inter Miami</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mb-4">
-                    <p class="text-slate-300">Mon 30 Jun 04:00</p>
-                    <p class="text-xs text-slate-300">contract: <span id="contractDua"
-                            class="font-mono text-xs text-slate-300">loading...</span></p>
-                </div>
-
-                <div class="grid grid-cols-3 gap-2">
-                    <div class="odds-box bg-blue-50 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('PSG', '1.5', 'PSG vs Inter Miami', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80">1.5</p>
-                    </div>
-                    <div class="odds-box bg-gray-100 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Draw', '3.5', 'PSG vs Inter Miami', 'betDraw')">
-                        <p class="font-bold text-slate-700/90">3.5</p>
-                    </div>
-                    <div class="odds-box bg-blue-50 p-2 rounded text-center cursor-pointer"
-                        onclick="openBetModal('Inter Miami', '2.5', 'PSG vs Inter Miami', 'betTeamB')">
-                        <p class="font-bold text-red-600/80">2.5</p>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 
     <div id="modalOverlay" onclick="closeBetModal()"></div>
 
     <!-- Bet Modal -->
-    <div id="betModal" class="bg-gray-800 text-white">
+    <div id="betModal" class="bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 text-white">
         <p class="text-xl font-bold mb-4" id="modalMatchInfo"></p>
         <div class="mb-4">
             <p class="font-bold text-slate-300 mt-1" id="modalSelection"></p>
@@ -429,7 +606,8 @@
 
     <!-- Reward Modal -->
     <div id="rewardModal" class="modal">
-        <div class="modal-content bg-gray-800 w-[90%] max-w-2xl max-h-[90vh] relative">
+        <div
+            class="modal-content bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 w-[90%] max-w-2xl max-h-[90vh] relative">
             <h2 class="text-2xl font-bold mb-4 text-slate-200">Available Reward</h2>
             <span
                 class="close absolute -top-1 right-4 text-slate-300 hover:text-slate-400 text-[42px] font-bold cursor-pointer">&times;</span>
@@ -443,7 +621,7 @@
         style="background-color: rgba(0, 0, 0, 0.5);">
 
         <div id="historyModalContent"
-            class="bg-gray-800 rounded-lg p-6 w-[90%] max-w-2xl relative max-h-[90vh] overflow-y-auto"
+            class="bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-lg p-6 w-[90%] max-w-2xl relative max-h-[90vh] overflow-y-auto"
             style="-ms-overflow-style: none;">
 
             <button id="closeModal"
