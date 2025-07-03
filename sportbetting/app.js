@@ -976,7 +976,7 @@ async function openRewardModal() {
                 if (ethReward > 0) {
                     hasRewards = true;
                     rewardsHtml += `
-  <div class="reward-item bg-[#121829] text-white rounded-xl p-4 space-y-3 w-full flex justify-between">
+  <div class="reward-item bg-[#121829] text-white rounded-xl p-4 mb-4 space-y-3 w-full flex justify-between">
     <div class="reward-info text-white">
       <p>Contract: <a href="https://testnet3.explorer.nexus.xyz/address/${(CONTRACTS[match])}" target="_blank" rel="noopener noreferrer" class="underline text-white font-mono">${shortenAddress(address)}</a></p>
       <p class="modal-text">Reward: ${ethReward.toFixed(2)} NEX</p>

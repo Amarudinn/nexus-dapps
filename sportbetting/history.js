@@ -13,7 +13,7 @@ const matches = [
         contract: "0x2c3d9b6F02e056461C76185bfE1D3214be0e4aFD",
         bets: {
             "Real Madrid": [
-                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "2.0 NEX" }
+                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "2.0 NEX" }
             ],
             Dortmund: [
                 { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "0.15 NEX" }
@@ -43,7 +43,7 @@ const matches = [
                 { address: "0x13696C89dC11d3D38D2aAED45a668480a992fC39", bet: "12 NEX" }
             ],
             Draw: [
-                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "2.0 NEX" }
+                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "2.0 NEX" }
             ]
         }
     },
@@ -67,7 +67,7 @@ const matches = [
                 { address: "0x13696C89dC11d3D38D2aAED45a668480a992fC39", bet: "12 NEX" }
             ],
             Draw: [
-                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "0.15 NEX" }
+                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "0.15 NEX" }
             ]
         }
     },
@@ -91,7 +91,7 @@ const matches = [
                 { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "0.15 NEX" }
             ],
             Draw: [
-                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "2.0 NEX" }
+                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "2.0 NEX" }
             ]
         }
     },
