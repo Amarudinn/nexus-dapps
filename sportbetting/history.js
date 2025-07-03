@@ -108,11 +108,11 @@ const matches = [
         contract: "0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF",
         bets: {
             "M. Giron": [
-                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 ETH" }
+                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 NEX" }
             ],
             "J. Mensik": [
-                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "1 ETH" },
-                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 ETH" }
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "1 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" }
             ]
         }
     },
@@ -129,10 +129,10 @@ const matches = [
         contract: "0xd25EcA3e4C874376d99f795980b822f4b06f31c9",
         bets: {
             "G. Dimitrov": [
-                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "1 ETH" },
-                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 ETH" },
-                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 ETH" },
-                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 ETH" }
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "1 NEX" },
+                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 NEX" }
             ],
             "C. Moutet": []
         }
@@ -150,12 +150,12 @@ const matches = [
         contract: "0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49",
         bets: {
             "V. Kudermetova": [
-                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 ETH" },
-                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 ETH" }
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 NEX" }
             ],
             "E. Navarro": [
-                { address: "0x13696C89dC11d3D38D2aAED45a668480a992fC39", bet: "0.1 ETH" },
-                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 ETH" }
+                { address: "0x13696C89dC11d3D38D2aAED45a668480a992fC39", bet: "0.1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 NEX" }
             ]
         }
     },
@@ -173,10 +173,10 @@ const matches = [
         bets: {
             "M. Sakkari": [],
             "E. Rybakina": [
-                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "1 ETH" },
-                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 ETH" },
-                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 ETH" },
-                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 ETH" }
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "1 NEX" },
+                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 NEX" }
             ]
         }
     }
