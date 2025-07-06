@@ -1,5 +1,162 @@
 const matches = [
     {
+        teamA: "M. Kecmanovic",
+        teamB: "N. Djokovic",
+        winner: "N. Djokovic",
+        date: "2025-07-05",
+        type: "Match Winner",
+        odds: {
+            "M. Kecmanovic": "3",
+            "N. Djokovic": "1.1"
+        },
+        contract: "0x133b67279f7E7835a7Dc5aE118091b461717c7cA",
+        bets: {
+            "M. Kecmanovic": [],
+            "N. Djokovic": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 NEX" }
+            ]
+        }
+    },
+    {
+        teamA: "B. Nakashima",
+        teamB: "L. Sonego",
+        winner: "L. Sonego",
+        date: "2025-07-05",
+        type: "Match Winner",
+        odds: {
+            "B. Nakashima": "1.4",
+            "L. Sonego": "1.9"
+        },
+        contract: "0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49",
+        bets: {
+            "B. Nakashima": [
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "3 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 NEX" }
+            ],
+            "L. Sonego": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" }
+            ]
+        }
+    },
+    {
+        teamA: "F. Cobolli",
+        teamB: "J. Mensik",
+        winner: "F. Cobolli",
+        date: "2025-07-05",
+        type: "Match Winner",
+        odds: {
+            "F. Cobolli": "1.9",
+            "J. Mensik": "1.4"
+        },
+        contract: "0xd25EcA3e4C874376d99f795980b822f4b06f31c9",
+        bets: {
+            "F. Cobolli": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" }
+            ],
+            "J. Mensik": [
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "3 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ]
+        }
+    },
+    {
+        teamA: "A. de Minaur",
+        teamB: "A. Holmgren",
+        winner: "A. de Minaur",
+        date: "2025-07-05",
+        type: "Match Winner",
+        odds: {
+            "A. de Minaur": "1.1",
+            "A. Holmgren": "3"
+        },
+        contract: "0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF",
+        bets: {
+            "A. de Minaur": [
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "A. Holmgren": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" }
+            ]
+        }
+    },
+    {
+        teamA: "C. Tauson",
+        teamB: "E. Rybakina",
+        winner: "C. Tauson",
+        date: "2025-07-05",
+        type: "Match Winner",
+        odds: {
+            "C. Tauson": "2.4",
+            "E. Rybakina": "1.1"
+        },
+        contract: "0x2F8402cdBFFb897Bee02Ce136bc5646601e8966C",
+        bets: {
+            "C. Tauson": [],
+            "E. Rybakina": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ]
+        }
+    },
+    {
+        teamA: "I. Swiatek",
+        teamB: "D. Collins",
+        winner: "I. Swiatek",
+        date: "2025-07-05",
+        type: "Match Winner",
+        odds: {
+            "I. Swiatek": "1.1",
+            "D. Collins": "2.4"
+        },
+        contract: "0xCd10390Ea2e7CB3B9a46B7B3d77eCfe7d878232C",
+        bets: {
+            "I. Swiatek": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" }
+            ],
+            "D. Collins": []
+        }
+    },
+    {
+        teamA: "M. Andreeva",
+        teamB: "H. Baptiste",
+        winner: "M. Andreeva",
+        date: "2025-07-05",
+        type: "Match Winner",
+        odds: {
+            "M. Andreeva": "1.1",
+            "H. Baptiste": "2.4"
+        },
+        contract: "0x2b105e14b51233F869C40a413b6D60718510aC86",
+        bets: {
+            "M. Andreeva": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "H. Baptiste": []
+        }
+    },
+    {
+        teamA: "B. Krejcikova",
+        teamB: "E. Navarro",
+        winner: "E. Navarro",
+        date: "2025-07-05",
+        type: "Match Winner",
+        odds: {
+            "B. Krejcikova": "1.9",
+            "E. Navarro": "1.4"
+        },
+        contract: "0xF50E4b651bE72948AB1E6bBC99F442aC0AD3Ad40",
+        bets: {
+            "B. Krejcikova": [],
+            "E. Navarro": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "3 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ]
+        }
+    },
+    {
         teamA: "Real Madrid",
         teamB: "Dortmund",
         winner: "Real Madrid",
@@ -13,13 +170,14 @@ const matches = [
         contract: "0x2c3d9b6F02e056461C76185bfE1D3214be0e4aFD",
         bets: {
             "Real Madrid": [
-                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "2.0 NEX" }
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 NEX" },
+                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x8F70288a8B2B14fF1eB27BFaeeb6ad8AB48Ba7E4", bet: "10 NEX" }
             ],
-            Dortmund: [
-                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "0.15 NEX" }
-            ],
+            Dortmund: [],
             Draw: [
-                { address: "0x13696C89dC11d3D38D2aAED45a668480a992fC39", bet: "12 NEX" }
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "1 NEX" }
             ]
         }
     },
@@ -37,20 +195,21 @@ const matches = [
         contract: "0xB4d56b7ee390B981D116810C109515Fb41b64be4",
         bets: {
             PSG: [
-                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "0.15 NEX" }
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 NEX" },
+                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x8F70288a8B2B14fF1eB27BFaeeb6ad8AB48Ba7E4", bet: "4 NEX" }
             ],
             "Bayern Munich": [
-                { address: "0x13696C89dC11d3D38D2aAED45a668480a992fC39", bet: "12 NEX" }
+                { address: "0x13696C89dC11d3D38D2aAED45a668480a992fC39", bet: "0.1 NEX" }
             ],
-            Draw: [
-                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "2.0 NEX" }
-            ]
+            Draw: []
         }
     },
     {
         teamA: "Palmeiras",
         teamB: "Chelsea",
-        winner: "Draw",
+        winner: "Chelsea",
         date: "2025-07-05",
         type: "Match Winner",
         odds: {
@@ -61,20 +220,22 @@ const matches = [
         contract: "0x630Bd4318d998c6DA70fDD6fAaf7DE16c1555526",
         bets: {
             Palmeiras: [
-                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "2.0 NEX" }
+                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 NEX" },
+                { address: "0x8F70288a8B2B14fF1eB27BFaeeb6ad8AB48Ba7E4", bet: "5 NEX" }
             ],
             Chelsea: [
-                { address: "0x13696C89dC11d3D38D2aAED45a668480a992fC39", bet: "12 NEX" }
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" }
             ],
             Draw: [
-                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "0.15 NEX" }
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "2 NEX" }
             ]
         }
     },
     {
         teamA: "Fluminense",
         teamB: "Al-Hilal",
-        winner: "Al-Hilal",
+        winner: "Fluminense",
         date: "2025-07-05",
         type: "Match Winner",
         odds: {
@@ -85,14 +246,15 @@ const matches = [
         contract: "0x8b9e0E7fe46b4e494bc9645DEf8Ae18D0E632595",
         bets: {
             Fluminense: [
-                { address: "0x13696C89dC11d3D38D2aAED45a668480a992fC39", bet: "12 NEX" }
+                { address: "0x4C1f461B8Ca73Ff479b7e15611084fD2ab66282A", bet: "0.1 NEX" }
             ],
             "Al-Hilal": [
-                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "0.15 NEX" }
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "2 NEX" },
+                { address: "0x8F70288a8B2B14fF1eB27BFaeeb6ad8AB48Ba7E4", bet: "10 NEX" }
             ],
-            Draw: [
-                { address: "0x1e55b0f3620c06e3493c2a47c6d3d855421c1583", bet: "2.0 NEX" }
-            ]
+            Draw: []
         }
     },
     {
