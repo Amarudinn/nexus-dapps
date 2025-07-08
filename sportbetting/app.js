@@ -713,7 +713,7 @@ async function checkNetwork() {
                             chainId: '0xF64',
                             chainName: 'Nexus Testnet',
                             nativeCurrency: { name: 'Nexus Testnet', symbol: 'NEX', decimals: 18 },
-                            rpcUrls: ['https://nexus-testnet.g.alchemy.com/public'],
+                            rpcUrls: ['https://testnet3.rpc.nexus.xyz'],
                             blockExplorerUrls: ['https://testnet3.explorer.nexus.xyz']
                         }]
                     });
