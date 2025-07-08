@@ -120,10 +120,10 @@ function animate() {
 animate();
 
 const CONTRACTS = {
-    'M. Cilic vs F. Cobolli': '0x133b67279f7E7835a7Dc5aE118091b461717c7cA', // Contract Satu
-    'A. de Minaur vs N. Djokovic': '0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49', // Contract Dua
-    'B. Shelton vs L. Sonego': '0xd25EcA3e4C874376d99f795980b822f4b06f31c9', // Contract Tiga
-    'J. Sinner vs G. Dimitrov': '0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF', // Contract Empat
+    'J. Sinner vs B. Shelton': '0x133b67279f7E7835a7Dc5aE118091b461717c7cA', // Contract Satu
+    'F. Cobolli vs N. Djokovic': '0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49', // Contract Dua
+    'I. Swiatek vs L. Samsonova': '0xd25EcA3e4C874376d99f795980b822f4b06f31c9', // Contract Tiga
+    'M. Andreeva vs B. Bencic': '0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF', // Contract Empat
     'L. Samsonova vs J. Bouzas Maneiro': '0x8b9e0E7fe46b4e494bc9645DEf8Ae18D0E632595', // Contract Lima
     'E. Alexandrova vs B. Bencic': '0x630Bd4318d998c6DA70fDD6fAaf7DE16c1555526', // Contract Enam
     'M. Andreeva vs N. Navarro': '0xB4d56b7ee390B981D116810C109515Fb41b64be4', // Contract Tujuh
@@ -644,10 +644,10 @@ window.addEventListener('DOMContentLoaded', async function () {
     connectButton.addEventListener('click', initWeb3);
 
     if (typeof CONTRACTS !== 'undefined') {
-        document.getElementById('contractSatu').textContent = shortenAddress(CONTRACTS['M. Cilic vs F. Cobolli']);
-        document.getElementById('contractDua').textContent = shortenAddress(CONTRACTS['A. de Minaur vs N. Djokovic']);
-        document.getElementById('contractTiga').textContent = shortenAddress(CONTRACTS['B. Shelton vs L. Sonego']);
-        document.getElementById('contractEmpat').textContent = shortenAddress(CONTRACTS['J. Sinner vs G. Dimitrov']);
+        document.getElementById('contractSatu').textContent = shortenAddress(CONTRACTS['J. Sinner vs B. Shelton']);
+        document.getElementById('contractDua').textContent = shortenAddress(CONTRACTS['F. Cobolli vs N. Djokovic']);
+        document.getElementById('contractTiga').textContent = shortenAddress(CONTRACTS['I. Swiatek vs L. Samsonova']);
+        document.getElementById('contractEmpat').textContent = shortenAddress(CONTRACTS['M. Andreeva vs B. Bencic']);
         document.getElementById('contractLima').textContent = shortenAddress(CONTRACTS['L. Samsonova vs J. Bouzas Maneiro']);
         document.getElementById('contractEnam').textContent = shortenAddress(CONTRACTS['E. Alexandrova vs B. Bencic']);
         document.getElementById('contractTujuh').textContent = shortenAddress(CONTRACTS['M. Andreeva vs N. Navarro']);
@@ -1120,10 +1120,10 @@ window.addEventListener('load', () => {
     if (typeof window.ethereum !== 'undefined') {
         window.web3 = new Web3(window.ethereum);
 
-        updateStatusUI(CONTRACTS['M. Cilic vs F. Cobolli'], 'status-contract-satu', 'text-contract-satu', 'M. Cilic vs F. Cobolli');
-        updateStatusUI(CONTRACTS['A. de Minaur vs N. Djokovic'], 'status-contract-dua', 'text-contract-dua', 'A. de Minaur vs N. Djokovic');
-        updateStatusUI(CONTRACTS['B. Shelton vs L. Sonego'], 'status-contract-tiga', 'text-contract-tiga', 'B. Shelton vs L. Sonego');
-        updateStatusUI(CONTRACTS['J. Sinner vs G. Dimitrov'], 'status-contract-empat', 'text-contract-empat', 'J. Sinner vs G. Dimitrov');
+        updateStatusUI(CONTRACTS['J. Sinner vs B. Shelton'], 'status-contract-satu', 'text-contract-satu', 'J. Sinner vs B. Shelton');
+        updateStatusUI(CONTRACTS['F. Cobolli vs N. Djokovic'], 'status-contract-dua', 'text-contract-dua', 'F. Cobolli vs N. Djokovic');
+        updateStatusUI(CONTRACTS['I. Swiatek vs L. Samsonova'], 'status-contract-tiga', 'text-contract-tiga', 'I. Swiatek vs L. Samsonova');
+        updateStatusUI(CONTRACTS['M. Andreeva vs B. Bencic'], 'status-contract-empat', 'text-contract-empat', 'M. Andreeva vs B. Bencic');
         updateStatusUI(CONTRACTS['L. Samsonova vs J. Bouzas Maneiro'], 'status-contract-lima', 'text-contract-lima', 'L. Samsonova vs J. Bouzas Maneiro');
         updateStatusUI(CONTRACTS['E. Alexandrova vs B. Bencic'], 'status-contract-enam', 'text-contract-enam', 'E. Alexandrova vs B. Bencic');
         updateStatusUI(CONTRACTS['M. Andreeva vs N. Navarro'], 'status-contract-tujuh', 'text-contract-tujuh', 'M. Andreeva vs N. Navarro');
@@ -1134,10 +1134,10 @@ window.addEventListener('load', () => {
         updateStatusUI(CONTRACTS['B. Krejcikova vs E. Navarro'], 'status-contract-duabelas', 'text-contract-duabelas', 'B. Krejcikova vs E. Navarro');
 
         setInterval(() => {
-            updateStatusUI(CONTRACTS['M. Cilic vs F. Cobolli'], 'status-contract-satu', 'text-contract-satu', 'M. Cilic vs F. Cobolli');
-            updateStatusUI(CONTRACTS['A. de Minaur vs N. Djokovic'], 'status-contract-dua', 'text-contract-dua', 'A. de Minaur vs N. Djokovic');
-            updateStatusUI(CONTRACTS['B. Shelton vs L. Sonego'], 'status-contract-tiga', 'text-contract-tiga', 'B. Shelton vs L. Sonego');
-            updateStatusUI(CONTRACTS['J. Sinner vs G. Dimitrov'], 'status-contract-empat', 'text-contract-empat', 'J. Sinner vs G. Dimitrov');
+            updateStatusUI(CONTRACTS['J. Sinner vs B. Shelton'], 'status-contract-satu', 'text-contract-satu', 'J. Sinner vs B. Shelton');
+            updateStatusUI(CONTRACTS['F. Cobolli vs N. Djokovic'], 'status-contract-dua', 'text-contract-dua', 'F. Cobolli vs N. Djokovic');
+            updateStatusUI(CONTRACTS['I. Swiatek vs L. Samsonova'], 'status-contract-tiga', 'text-contract-tiga', 'I. Swiatek vs L. Samsonova');
+            updateStatusUI(CONTRACTS['M. Andreeva vs B. Bencic'], 'status-contract-empat', 'text-contract-empat', 'M. Andreeva vs B. Bencic');
             updateStatusUI(CONTRACTS['L. Samsonova vs J. Bouzas Maneiro'], 'status-contract-lima', 'text-contract-lima', 'L. Samsonova vs J. Bouzas Maneiro');
             updateStatusUI(CONTRACTS['E. Alexandrova vs B. Bencic'], 'status-contract-enam', 'text-contract-enam', 'E. Alexandrova vs B. Bencic');
             updateStatusUI(CONTRACTS['M. Andreeva vs N. Navarro'], 'status-contract-tujuh', 'text-contract-tujuh', 'M. Andreeva vs N. Navarro');

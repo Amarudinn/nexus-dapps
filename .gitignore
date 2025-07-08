@@ -9,3 +9,5 @@ log-transaction.txt
 winner-batch.py
 package-lock.json
 editor.html
+json-editor.html
+test-json-editor.html

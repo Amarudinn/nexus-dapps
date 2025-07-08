@@ -1,5 +1,199 @@
 const matches = [
     {
+        "teamA": "I. Swiatek",
+        "teamB": "C. Tauson",
+        "winner": "I. Swiatek",
+        "date": "2025-07-07",
+        "type": "Match Winner",
+        "odds": {
+            "I. Swiatek": "1.1",
+            "C. Tauson": "2.4"
+        },
+        "contract": "0x2c3d9b6F02e056461C76185bfE1D3214be0e4aFD",
+        "bets": {
+            "I. Swiatek": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "C. Tauson": [
+                { address: "0x433E646A7531c419C868916a71fF80143cf9f1f1", bet: "1 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "M. Andreeva",
+        "teamB": "N. Navarro",
+        "winner": "M. Andreeva",
+        "date": "2025-07-07",
+        "type": "Match Winner",
+        "odds": {
+            "M. Andreeva": "1.4",
+            "N. Navarro": "1.9"
+        },
+        "contract": "0xB4d56b7ee390B981D116810C109515Fb41b64be4",
+        "bets": {
+            "M. Andreeva": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "6 NEX" },
+                { address: "0x433E646A7531c419C868916a71fF80143cf9f1f1", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "N. Navarro": []
+        }
+    },
+    {
+        "teamA": "E. Alexandrova",
+        "teamB": "B. Bencic",
+        "winner": "B. Bencic",
+        "date": "2025-07-07",
+        "type": "Match Winner",
+        "odds": {
+            "E. Alexandrova": "1.4",
+            "B. Bencic": "1.9"
+        },
+        "contract": "0x630Bd4318d998c6DA70fDD6fAaf7DE16c1555526",
+        "bets": {
+            "E. Alexandrova": [
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "10 NEX" },
+                { address: "0x433E646A7531c419C868916a71fF80143cf9f1f1", bet: "1 NEX" },
+                { address: "0xB7A5f2ad10411e7B60A7aA73ab9A78c5d7B1Eb11", bet: "1 NEX" },
+                { address: "0x2f8244A87d1F1D192aDBE7B526B82a599Aff767D", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "B. Bencic": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "L. Samsonova",
+        "teamB": "J. Bouzas Maneiro",
+        "winner": "L. Samsonova",
+        "date": "2025-07-07",
+        "type": "Match Winner",
+        "odds": {
+            "L. Samsonova": "1.1",
+            "J. Bouzas Maneiro": "2.4"
+        },
+        "contract": "0x8b9e0E7fe46b4e494bc9645DEf8Ae18D0E632595",
+        "bets": {
+            "L. Samsonova": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x1A4758AA342E2Af724B2082863A7E4cAD770bfA9", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "J. Bouzas Maneiro": [
+                { address: "0x82378291D6AC4356786f2c3D193C91032266Af17", bet: "1 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "J. Sinner",
+        "teamB": "G. Dimitrov",
+        "winner": "J. Sinner",
+        "date": "2025-07-07",
+        "type": "Match Winner",
+        "odds": {
+            "J. Sinner": "1.1",
+            "G. Dimitrov": "3"
+        },
+        "contract": "0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF",
+        "bets": {
+            "J. Sinner": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x8610e13BBD4A9bf5840695F31d573a341eD3E5d0", bet: "1.1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "G. Dimitrov": [
+                { address: "0x433E646A7531c419C868916a71fF80143cf9f1f1", bet: "1 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "B. Shelton",
+        "teamB": "L. Sonego",
+        "winner": " B. Shelton",
+        "date": "2025-07-07",
+        "type": "Match Winner",
+        "odds": {
+            "B. Shelton": "1.4",
+            "L. Sonego": "1.9"
+        },
+        "contract": "0xd25EcA3e4C874376d99f795980b822f4b06f31c9",
+        "bets": {
+            "B. Shelton": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "10 NEX" },
+                { address: "0x433E646A7531c419C868916a71fF80143cf9f1f1", bet: "1 NEX" },
+                { address: "0x4Fe263Cb6523E744F2F5Fa25d4175390C432f494", bet: "1.1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "L. Sonego": []
+        }
+    },
+    {
+        "teamA": "A. de Minaur",
+        "teamB": " N. Djokovic",
+        "winner": " N. Djokovic",
+        "date": "2025-07-07",
+        "type": "Match Winner",
+        "odds": {
+            "A. de Minau": "3",
+            " N. Djokovic": "1.1"
+        },
+        "contract": "0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49",
+        "bets": {
+            "A. de Minaur": [
+                { address: "0x433E646A7531c419C868916a71fF80143cf9f1f1", bet: "1 NEX" },
+                { address: "0x1e0aea7E6FaE039853f3976a2C914c6656F3c076", bet: "2 NEX" },
+                { address: "0x726ACb7225167E92cdF399A948b974aefBB1682D", bet: "0.5 NEX" }
+            ],
+            " N. Djokovic": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0xcd4223F176119aAeeB5653c9D4Bb86F884327408", bet: "1 NEX" },
+                { address: "0xBd8b150D92d34DD0176678Ef198aC52193a57e33", bet: "2 NEX" },
+                { address: "0x2f8244A87d1F1D192aDBE7B526B82a599Aff767D", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "M. Cilic",
+        "teamB": "F. Cobolli",
+        "winner": "F. Cobolli",
+        "date": "2025-07-07",
+        "type": "Match Winner",
+        "odds": {
+            "M. Cilic": "1.9",
+            "F. Cobolli": "1.9"
+        },
+        "contract": "0x133b67279f7E7835a7Dc5aE118091b461717c7cA",
+        "bets": {
+            "M. Cilic": [
+                { address: "0x433E646A7531c419C868916a71fF80143cf9f1f1", bet: "1 NEX" },
+                { address: "0x637be6D567119B89Bd1A34993A223D2413edDbe8", bet: "1 NEX" },
+                { address: "0x1B07cA05607EfD0E820DeE2c3439e9e5700523d1", bet: "0.10136 NEX" },
+                { address: "0xC29D1D1281EBb2632F0D7261cA7e16CEDC2B9cFA", bet: "0.10126 NEX" },
+                { address: "0x611e749e9b2961c8e1B0c6692EE4D09dcCf34d15", bet: "0.10127 NEX" },
+                { address: "0x18296FF7bE01ac14cB1038C4a3B4C5171bd0F797", bet: "0.10137 NEX" },
+                { address: "0x9DD18bfce2869292631508f57d2682040bcc3ad8", bet: "0.1013 NEX" },
+                { address: "0xf798eC3aa24Db17211DBE323585Eb9cB6088c531", bet: "0.10134 NEX" },
+                { address: "0xb15F9a083Afd5EB03abf6D19BF057424eede1C6A", bet: "0.10129 NEX" },
+                { address: "0xc987194F3B8E627Af902B4Fcc69e85025C7383d0", bet: "0.10132 NEX" },
+                { address: "0x94C5D8e427527ff87bfb53e9c643F99CF4379ad2", bet: "0.10126 NEX" },
+                { address: "0xA8dff1f485915253dbB206D2E9d33e189a2A939A", bet: "0.10139 NEX" },
+                { address: "0x2f8244A87d1F1D192aDBE7B526B82a599Aff767D", bet: "1 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "F. Cobolli": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0xcd4223F176119aAeeB5653c9D4Bb86F884327408", bet: "0.5 NEX" },
+                { address: "0x3169cBD34b95518B5d777121E8640836204F666A", bet: "1 NEX" },
+                { address: "0xD1562fe7fc993F726F36F6E039C579eaf3430f8C", bet: "1 NEX" }
+            ]
+        }
+    },
+    {
         teamA: "M. Kecmanovic",
         teamB: "N. Djokovic",
         winner: "N. Djokovic",
