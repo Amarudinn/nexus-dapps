@@ -1,5 +1,29 @@
 const matches = [
     {
+        "teamA": "Fluminense",
+        "teamB": "Chelsea",
+        "winner": "Chelsea",
+        "date": "2025-07-08",
+        "type": "Match Winner",
+        "odds": {
+            "Fluminense": "2.4",
+            "Chelsea": "1.4",
+            "Draw": "2.4"
+        },
+        "contract": "0x2F8402cdBFFb897Bee02Ce136bc5646601e8966C",
+        "bets": {
+            "Fluminense": [],
+            "Chelsea": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1 NEX" },
+                { address: "0x433E646A7531c419C868916a71fF80143cf9f1f1", bet: "10 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "Draw": [
+                { address: "0x7C84E769d02b649e5c3301f26B893ae6dF12A70e", bet: "0.5 NEX" }
+            ]
+        }
+    },
+    {
         "teamA": "I. Swiatek",
         "teamB": "C. Tauson",
         "winner": "I. Swiatek",
