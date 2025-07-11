@@ -102,14 +102,67 @@
         <div class="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4">
 
             <!-- UBAH -->
-            <!-- J. Sinner vs B. Shelton -->
+            <!-- T. Fritz vs C. Alcaraz -->
             <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-xl shadow-lg"
                 data-showtime="2025-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
                 <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Quarter Finals</p>
+                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Semi Finals</p>
                     <div class="flex items-center">
                         <div id="status-contract-satu" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
                         <span id="text-contract-satu" class="text-sm text-yellow-500"></span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div id="team-container" class="flex items-center justify-between w-full max-w-md mx-auto">
+                        <div id="team-left"
+                            class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">T. Fritz</h2>
+                        </div>
+
+                        <div id="team-right"
+                            class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
+                            <h2 class="font-bold text-[16px] text-lg">C. Alcaraz</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mb-4">
+                    <p class="text-slate-300 wib-time">Fri 11 Jul 19:30</p>
+                    <p class="text-xs text-slate-300">contract: <span id="contractSatu"
+                            class="font-mono text-xs text-slate-300">loading...</span></p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-2">
+                    <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
+                        onclick="openBetModal('T. Fritz', '2.4', 'T. Fritz vs C. Alcaraz', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">2.4</p>
+                    </div>
+                    <!-- <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
+                        onclick="openBetModal('Draw', '1', 'T. Fritz vs C. Alcaraz', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">1</p>
+                    </div> -->
+                    <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
+            transition-all duration-300 ease-in-out
+            hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
+                        onclick="openBetModal('C. Alcaraz', '1.1', 'T. Fritz vs C. Alcaraz', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.1</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UBAH -->
+            <!-- J. Sinner vs N. Djokovic -->
+            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-xl shadow-lg"
+                data-showtime="2025-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
+                <div class="pb-2 flex justify-between items-center">
+                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Semi Finals</p>
+                    <div class="flex items-center">
+                        <div id="status-contract-dua" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
+                        <span id="text-contract-dua" class="text-sm text-yellow-500"></span>
                     </div>
                 </div>
                 <div class="mb-3">
@@ -121,66 +174,13 @@
 
                         <div id="team-right"
                             class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
-                            <h2 class="font-bold text-[16px] text-lg">B. Shelton</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mb-4">
-                    <p class="text-slate-300 wib-time">Web 9 Jul 20:10</p>
-                    <p class="text-xs text-slate-300">contract: <span id="contractSatu"
-                            class="font-mono text-xs text-slate-300">loading...</span></p>
-                </div>
-
-                <div class="grid grid-cols-2 gap-2">
-                    <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
-            transition-all duration-300 ease-in-out
-            hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
-                        onclick="openBetModal('J. Sinner', '1.1', 'J. Sinner vs B. Shelton', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.1</p>
-                    </div>
-                    <!-- <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
-            transition-all duration-300 ease-in-out
-            hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
-                        onclick="openBetModal('Draw', '0', 'J. Sinner vs B. Shelton', 'betDraw')">
-                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">0</p>
-                    </div> -->
-                    <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
-            transition-all duration-300 ease-in-out
-            hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
-                        onclick="openBetModal('B. Shelton', '2.4', 'J. Sinner vs B. Shelton', 'betTeamB')">
-                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">2.4</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- UBAH -->
-            <!-- F. Cobolli vs N. Djokovic -->
-            <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-xl shadow-lg"
-                data-showtime="2025-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
-                <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Quarter Finals</p>
-                    <div class="flex items-center">
-                        <div id="status-contract-dua" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
-                        <span id="text-contract-dua" class="text-sm text-yellow-500"></span>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <div id="team-container" class="flex items-center justify-between w-full max-w-md mx-auto">
-                        <div id="team-left"
-                            class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
-                            <h2 class="font-bold text-[16px] text-lg">F. Cobolli</h2>
-                        </div>
-
-                        <div id="team-right"
-                            class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
                             <h2 class="font-bold text-[16px] text-lg">N. Djokovic</h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center mb-4">
-                    <p class="text-slate-300 wib-time">Web 9 Jul 20:40</p>
+                    <p class="text-slate-300 wib-time">Fri 11 Jul 21:10</p>
                     <p class="text-xs text-slate-300">contract: <span id="contractDua"
                             class="font-mono text-xs text-slate-300">loading...</span></p>
                 </div>
@@ -189,30 +189,30 @@
                     <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
-                        onclick="openBetModal('F. Cobolli', '3', 'F. Cobolli vs N. Djokovic', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">3</p>
+                        onclick="openBetModal('J. Sinner', '1.4', 'J. Sinner vs N. Djokovic', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.4</p>
                     </div>
                     <!-- <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
-                        onclick="openBetModal('Draw', '100', 'F. Cobolli vs N. Djokovic', 'betDraw')">
-                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">100</p>
+                        onclick="openBetModal('Draw', '1', 'J. Sinner vs N. Djokovic', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">1</p>
                     </div> -->
                     <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
-                        onclick="openBetModal('N. Djokovic', '1.1', 'F. Cobolli vs N. Djokovic', 'betTeamB')">
-                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.1</p>
+                        onclick="openBetModal('N. Djokovic', '1.9', 'J. Sinner vs N. Djokovic', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.9</p>
                     </div>
                 </div>
             </div>
 
             <!-- UBAH -->
-            <!-- I. Swiatek vs L. Samsonova -->
+            <!-- A. Anisimova vs I. Swiatek -->
             <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-xl shadow-lg"
                 data-showtime="2025-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
                 <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Quarter Finals</p>
+                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Finals</p>
                     <div class="flex items-center">
                         <div id="status-contract-tiga" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
                         <span id="text-contract-tiga" class="text-sm text-yellow-500"></span>
@@ -222,18 +222,18 @@
                     <div id="team-container" class="flex items-center justify-between w-full max-w-md mx-auto">
                         <div id="team-left"
                             class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
-                            <h2 class="font-bold text-[16px] text-lg">I. Swiatek</h2>
+                            <h2 class="font-bold text-[16px] text-lg">A. Anisimova</h2>
                         </div>
 
                         <div id="team-right"
                             class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
-                            <h2 class="font-bold text-[16px] text-lg">L. Samsonova</h2>
+                            <h2 class="font-bold text-[16px] text-lg">I. Swiatek</h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center mb-4">
-                    <p class="text-slate-300 wib-time">Web 9 Jul 19:00</p>
+                    <p class="text-slate-300 wib-time">Sat 12 Jul 20:00</p>
                     <p class="text-xs text-slate-300">contract: <span id="contractTiga"
                             class="font-mono text-xs text-slate-300">loading...</span></p>
                 </div>
@@ -242,30 +242,30 @@
                     <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
-                        onclick="openBetModal('I. Swiatek', '1.4', 'I. Swiatek vs L. Samsonova', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.4</p>
+                        onclick="openBetModal('A. Anisimova', '1.9', 'A. Anisimova vs I. Swiatek', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.9</p>
                     </div>
                     <!-- <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
-                        onclick="openBetModal('Draw', '100', 'I. Swiatek vs L. Samsonova', 'betDraw')">
-                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">100</p>
+                        onclick="openBetModal('Draw', '1', 'A. Anisimova vs I. Swiatek', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">1</p>
                     </div> -->
                     <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
-                        onclick="openBetModal('L. Samsonova', '1.9', 'I. Swiatek vs L. Samsonova', 'betTeamB')">
-                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.9</p>
+                        onclick="openBetModal('. Swiatek', '1.4', 'A. Anisimova vs I. Swiatek', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.4</p>
                     </div>
                 </div>
             </div>
 
             <!-- UBAH -->
-            <!-- M. Andreeva vs B. Bencic -->
+            <!-- Chelsea vs PSG -->
             <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-xl shadow-lg"
                 data-showtime="2025-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
                 <div class="pb-2 flex justify-between items-center">
-                    <p class="text-xs text-slate-300">Tennis - Wimbledon, London, Quarter Finals</p>
+                    <p class="text-xs text-slate-300">Football - Club World Cup, Final - 1X2</p>
                     <div class="flex items-center">
                         <div id="status-contract-empat" class="h-2 w-2 rounded-full animate-pulse bg-yellow-500"></div>
                         <span id="text-contract-empat" class="text-sm text-yellow-500"></span>
@@ -275,40 +275,40 @@
                     <div id="team-container" class="flex items-center justify-between w-full max-w-md mx-auto">
                         <div id="team-left"
                             class="text-slate-100 bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 w-full flex justify-center items-center py-2 rounded-l transition-all duration-300 shadow-md">
-                            <h2 class="font-bold text-[16px] text-lg">M. Andreeva</h2>
+                            <h2 class="font-bold text-[16px] text-lg">Chelsea </h2>
                         </div>
 
                         <div id="team-right"
                             class="text-slate-100 bg-gradient-to-r from-red-500 via-pink-500 to-rose-600 w-full flex justify-center items-center py-2 rounded-r transition-all duration-300 shadow-md">
-                            <h2 class="font-bold text-[16px] text-lg">B. Bencic</h2>
+                            <h2 class="font-bold text-[16px] text-lg">PSG</h2>
                         </div>
                     </div>
                 </div>
 
                 <div class="text-center mb-4">
-                    <p class="text-slate-300 wib-time">Web 9 Jul 19:30</p>
+                    <p class="text-slate-300 wib-time">Mon 14 Jul 02:00</p>
                     <p class="text-xs text-slate-300">contract: <span id="contractEmpat"
                             class="font-mono text-xs text-slate-300">loading...</span></p>
                 </div>
 
-                <div class="grid grid-cols-2 gap-2">
+                <div class="grid grid-cols-3 gap-2">
                     <div class="odds-box bg-gradient-to-r from-blue-100 to-blue-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-sky-600 hover:to-blue-400 hover:text-white"
-                        onclick="openBetModal('M. Andreeva', '1.4', 'M. Andreeva vs B. Bencic', 'betTeamA')">
-                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">1.4</p>
+                        onclick="openBetModal('Chelsea ', '2.4', 'Chelsea vs PSG', 'betTeamA')">
+                        <p class="font-bold text-sky-600/80 transition duration-300 hover:text-white">2.4</p>
                     </div>
-                    <!-- <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
+                    <div class="odds-box bg-gradient-to-r from-gray-100 to-gray-300 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-slate-600 hover:to-gray-500 hover:text-white"
-                        onclick="openBetModal('Draw', '100', 'M. Andreeva vs B. Bencic', 'betDraw')">
-                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">100</p>
-                    </div> -->
+                        onclick="openBetModal('Draw', '2.4', 'Chelsea vs PSG', 'betDraw')">
+                        <p class="font-bold text-slate-700/90 transition duration-300 hover:text-white">2.4</p>
+                    </div>
                     <div class="odds-box bg-gradient-to-r from-red-100 to-red-200 p-2 rounded text-center cursor-pointer
             transition-all duration-300 ease-in-out
             hover:bg-gradient-to-l hover:from-red-600 hover:to-red-400 hover:text-white"
-                        onclick="openBetModal('B. Bencic', '1.9', 'M. Andreeva vs B. Bencic', 'betTeamB')">
-                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.9</p>
+                        onclick="openBetModal('PSG', '1.4', 'Chelsea vs PSG', 'betTeamB')">
+                        <p class="font-bold text-red-600/80 transition duration-300 hover:text-white">1.4</p>
                     </div>
                 </div>
             </div>
@@ -529,7 +529,7 @@
             <!-- UBAH -->
             <!-- Fluminense vs Chelsea -->
             <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-xl shadow-lg"
-                data-showtime="2025-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
+                data-showtime="2026-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
                 <div class="pb-2 flex justify-between items-center">
                     <p class="text-xs text-slate-300">Football - Club World Cup, Semifinal - 1X2</p>
                     <div class="flex items-center">
@@ -583,7 +583,7 @@
             <!-- UBAH -->
             <!-- PSG vs Real Madrid -->
             <div class="match-container hidden px-4 pb-4 pt-2 mb-4 bg-gradient-to-br from-gray-800 via-slate-800 to-gray-900 rounded-xl shadow-lg"
-                data-showtime="2025-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
+                data-showtime="2026-07-02T15:10:00+07:00" data-hidetime="2026-07-04T09:00:00+07:00">
                 <div class="pb-2 flex justify-between items-center">
                     <p class="text-xs text-slate-300">Football - Club World Cup, Semifinal - 1X2</p>
                     <div class="flex items-center">

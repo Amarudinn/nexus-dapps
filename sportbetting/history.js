@@ -1,5 +1,104 @@
 const matches = [
     {
+        "teamA": "PSG",
+        "teamB": "Real Madrid",
+        "winner": "PSG",
+        "date": "2025-07-10",
+        "type": "Match Winner",
+        "odds": {
+            "PSG": "1.9",
+            "Real Madrid": "1.9",
+            "Draw": "2.4"
+        },
+        "contract": "0xCd10390Ea2e7CB3B9a46B7B3d77eCfe7d878232C",
+        "bets": {
+            "PSG": [
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "1.0 NEX" }
+            ],
+            "Real Madrid": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1.0 NEX" },
+                { address: "0x433E646A7531c419C868916a71fF80143cf9f1f1", bet: "5.0 NEX" }
+            ],
+            "Draw": [
+                { address: "0xb0f5c14c46B38cB9e7F96f9f00aE0706Ab57C773", bet: "1.0 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "M. Andreeva",
+        "teamB": "B. Bencic",
+        "winner": "B. Bencic",
+        "date": "2025-07-09",
+        "type": "Match Winner",
+        "odds": {
+            "M. Andreeva": "1.4",
+            "B. Bencic": "1.9"
+        },
+        "contract": "0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF",
+        "bets": {
+            "M. Andreeva": [
+                { address: "0x2528556130D263850D1c059Fdb477D03bc2E8396", bet: "0.1 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1.0 NEX" }
+            ],
+            "B. Bencic": []
+        }
+    },
+    {
+        "teamA": "I. Swiatek",
+        "teamB": " L. Samsonova",
+        "winner": "I. Swiatek",
+        "date": "2025-07-09",
+        "type": "Match Winner",
+        "odds": {
+            "I. Swiatek": "1.4",
+            " L. Samsonova": "1.9"
+        },
+        "contract": "0xd25EcA3e4C874376d99f795980b822f4b06f31c9",
+        "bets": {
+            "I. Swiatek": [
+                { address: "0x5D954BBEd0D179c752B57eCB61D4D964DCDEee32", bet: "0.1 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1.0 NEX" }
+            ],
+            " L. Samsonova": []
+        }
+    },
+    {
+        "teamA": "F. Cobolli",
+        "teamB": "N. Djokovic",
+        "winner": "N. Djokovic",
+        "date": "2025-07-09",
+        "type": "Match Winner",
+        "odds": {
+            "F. Cobolli": "3",
+            "N. Djokovic": "1.1"
+        },
+        "contract": "0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49",
+        "bets": {
+            "F. Cobolli": [],
+            "N. Djokovic": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1.0 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "J. Sinner",
+        "teamB": "B. Shelton",
+        "winner": "J. Sinner",
+        "date": "2025-07-09",
+        "type": "Match Winner",
+        "odds": {
+            "J. Sinner": "1.1",
+            "B. Shelton": "2.4"
+        },
+        "contract": "0x133b67279f7E7835a7Dc5aE118091b461717c7cA",
+        "bets": {
+            "J. Sinner": [],
+            "B. Shelton": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1.0 NEX" }
+            ]
+        }
+    },
+    {
         "teamA": "Fluminense",
         "teamB": "Chelsea",
         "winner": "Chelsea",
