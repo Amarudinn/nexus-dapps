@@ -120,18 +120,18 @@ function animate() {
 animate();
 
 const CONTRACTS = {
-    'T. Fritz vs C. Alcaraz': '0x133b67279f7E7835a7Dc5aE118091b461717c7cA', // Contract Satu
-    'J. Sinner vs N. Djokovic': '0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49', // Contract Dua
-    'A. Anisimova vs I. Swiatek': '0xd25EcA3e4C874376d99f795980b822f4b06f31c9', // Contract Tiga
+    'J. Sinner vs C. Alcaraz': '0x133b67279f7E7835a7Dc5aE118091b461717c7cA', // Contract Satu
+    'WAS Wizards vs BKN Nets': '0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49', // Contract Dua
+    'LA Clippers vs MIL Bucks': '0xd25EcA3e4C874376d99f795980b822f4b06f31c9', // Contract Tiga
     'Chelsea vs PSG': '0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF', // Contract Empat
-    'L. Samsonova vs J. Bouzas Maneiro': '0x8b9e0E7fe46b4e494bc9645DEf8Ae18D0E632595', // Contract Lima
-    'E. Alexandrova vs B. Bencic': '0x630Bd4318d998c6DA70fDD6fAaf7DE16c1555526', // Contract Enam
-    'M. Andreeva vs N. Navarro': '0xB4d56b7ee390B981D116810C109515Fb41b64be4', // Contract Tujuh
-    'I. Swiatek vs C. Tauson': '0x2c3d9b6F02e056461C76185bfE1D3214be0e4aFD', // Contract Delapan
-    'Fluminense vs Chelsea': '0x2F8402cdBFFb897Bee02Ce136bc5646601e8966C', // Contract Sembilan
-    'PSG vs Real Madrid': '0xCd10390Ea2e7CB3B9a46B7B3d77eCfe7d878232C', // Contract Sepuluh
-    'M. Andreeva vs H. Baptiste': '0x2b105e14b51233F869C40a413b6D60718510aC86', // Contract Sebelas
-    'B. Krejcikova vs E. Navarro': '0xF50E4b651bE72948AB1E6bBC99F442aC0AD3Ad40' // Contract Duabelas
+    'UTA Jazz vs GS Warriors': '0x8b9e0E7fe46b4e494bc9645DEf8Ae18D0E632595', // Contract Lima
+    'England W vs Wales W': '0x630Bd4318d998c6DA70fDD6fAaf7DE16c1555526', // Contract Enam
+    'Netherlands W vs France W': '0xB4d56b7ee390B981D116810C109515Fb41b64be4', // Contract Tujuh
+    'CHI Cubs vs NY Yankees': '0x2c3d9b6F02e056461C76185bfE1D3214be0e4aFD', // Contract Delapan
+    'MIA Marlins vs BAL Orioles': '0x2F8402cdBFFb897Bee02Ce136bc5646601e8966C', // Contract Sembilan
+    'TB Rays vs BOS Red Sox': '0xCd10390Ea2e7CB3B9a46B7B3d77eCfe7d878232C', // Contract Sepuluh
+    'COL Rockies vs CIN Reds': '0x2b105e14b51233F869C40a413b6D60718510aC86', // Contract Sebelas
+    'SEA Mariners vs DET Tigers': '0xF50E4b651bE72948AB1E6bBC99F442aC0AD3Ad40' // Contract Duabelas
 };
 
 const CONTRACT_ABI = [
@@ -644,18 +644,18 @@ window.addEventListener('DOMContentLoaded', async function () {
     connectButton.addEventListener('click', initWeb3);
 
     if (typeof CONTRACTS !== 'undefined') {
-        document.getElementById('contractSatu').textContent = shortenAddress(CONTRACTS['T. Fritz vs C. Alcaraz']);
-        document.getElementById('contractDua').textContent = shortenAddress(CONTRACTS['J. Sinner vs N. Djokovic']);
-        document.getElementById('contractTiga').textContent = shortenAddress(CONTRACTS['A. Anisimova vs I. Swiatek']);
+        document.getElementById('contractSatu').textContent = shortenAddress(CONTRACTS['J. Sinner vs C. Alcaraz']);
+        document.getElementById('contractDua').textContent = shortenAddress(CONTRACTS['WAS Wizards vs BKN Nets']);
+        document.getElementById('contractTiga').textContent = shortenAddress(CONTRACTS['LA Clippers vs MIL Bucks']);
         document.getElementById('contractEmpat').textContent = shortenAddress(CONTRACTS['Chelsea vs PSG']);
-        document.getElementById('contractLima').textContent = shortenAddress(CONTRACTS['L. Samsonova vs J. Bouzas Maneiro']);
-        document.getElementById('contractEnam').textContent = shortenAddress(CONTRACTS['E. Alexandrova vs B. Bencic']);
-        document.getElementById('contractTujuh').textContent = shortenAddress(CONTRACTS['M. Andreeva vs N. Navarro']);
-        document.getElementById('contractDelapan').textContent = shortenAddress(CONTRACTS['I. Swiatek vs C. Tauson']);
-        document.getElementById('contractSembilan').textContent = shortenAddress(CONTRACTS['Fluminense vs Chelsea']);
-        document.getElementById('contractSepuluh').textContent = shortenAddress(CONTRACTS['PSG vs Real Madrid']);
-        document.getElementById('contractSebelas').textContent = shortenAddress(CONTRACTS['M. Andreeva vs H. Baptiste']);
-        document.getElementById('contractDuabelas').textContent = shortenAddress(CONTRACTS['B. Krejcikova vs E. Navarro']);
+        document.getElementById('contractLima').textContent = shortenAddress(CONTRACTS['UTA Jazz vs GS Warriors']);
+        document.getElementById('contractEnam').textContent = shortenAddress(CONTRACTS['England W vs Wales W']);
+        document.getElementById('contractTujuh').textContent = shortenAddress(CONTRACTS['Netherlands W vs France W']);
+        document.getElementById('contractDelapan').textContent = shortenAddress(CONTRACTS['CHI Cubs vs NY Yankees']);
+        document.getElementById('contractSembilan').textContent = shortenAddress(CONTRACTS['MIA Marlins vs BAL Orioles']);
+        document.getElementById('contractSepuluh').textContent = shortenAddress(CONTRACTS['TB Rays vs BOS Red Sox']);
+        document.getElementById('contractSebelas').textContent = shortenAddress(CONTRACTS['COL Rockies vs CIN Reds']);
+        document.getElementById('contractDuabelas').textContent = shortenAddress(CONTRACTS['SEA Mariners vs DET Tigers']);
     }
 });
 
@@ -1120,32 +1120,32 @@ window.addEventListener('load', () => {
     if (typeof window.ethereum !== 'undefined') {
         window.web3 = new Web3(window.ethereum);
 
-        updateStatusUI(CONTRACTS['T. Fritz vs C. Alcaraz'], 'status-contract-satu', 'text-contract-satu', 'T. Fritz vs C. Alcaraz');
-        updateStatusUI(CONTRACTS['J. Sinner vs N. Djokovic'], 'status-contract-dua', 'text-contract-dua', 'J. Sinner vs N. Djokovic');
-        updateStatusUI(CONTRACTS['A. Anisimova vs I. Swiatek'], 'status-contract-tiga', 'text-contract-tiga', 'A. Anisimova vs I. Swiatek');
+        updateStatusUI(CONTRACTS['J. Sinner vs C. Alcaraz'], 'status-contract-satu', 'text-contract-satu', 'J. Sinner vs C. Alcaraz');
+        updateStatusUI(CONTRACTS['WAS Wizards vs BKN Nets'], 'status-contract-dua', 'text-contract-dua', 'WAS Wizards vs BKN Nets');
+        updateStatusUI(CONTRACTS['LA Clippers vs MIL Bucks'], 'status-contract-tiga', 'text-contract-tiga', 'LA Clippers vs MIL Bucks');
         updateStatusUI(CONTRACTS['Chelsea vs PSG'], 'status-contract-empat', 'text-contract-empat', 'Chelsea vs PSG');
-        updateStatusUI(CONTRACTS['L. Samsonova vs J. Bouzas Maneiro'], 'status-contract-lima', 'text-contract-lima', 'L. Samsonova vs J. Bouzas Maneiro');
-        updateStatusUI(CONTRACTS['E. Alexandrova vs B. Bencic'], 'status-contract-enam', 'text-contract-enam', 'E. Alexandrova vs B. Bencic');
-        updateStatusUI(CONTRACTS['M. Andreeva vs N. Navarro'], 'status-contract-tujuh', 'text-contract-tujuh', 'M. Andreeva vs N. Navarro');
-        updateStatusUI(CONTRACTS['I. Swiatek vs C. Tauson'], 'status-contract-delapan', 'text-contract-delapan', 'I. Swiatek vs C. Tauson');
-        updateStatusUI(CONTRACTS['Fluminense vs Chelsea'], 'status-contract-sembilan', 'text-contract-sembilan', 'Fluminense vs Chelsea');
-        updateStatusUI(CONTRACTS['PSG vs Real Madrid'], 'status-contract-sepuluh', 'text-contract-sepuluh', 'PSG vs Real Madrid');
-        updateStatusUI(CONTRACTS['M. Andreeva vs H. Baptiste'], 'status-contract-sebelas', 'text-contract-sebelas', 'M. Andreeva vs H. Baptiste');
-        updateStatusUI(CONTRACTS['B. Krejcikova vs E. Navarro'], 'status-contract-duabelas', 'text-contract-duabelas', 'B. Krejcikova vs E. Navarro');
+        updateStatusUI(CONTRACTS['UTA Jazz vs GS Warriors'], 'status-contract-lima', 'text-contract-lima', 'UTA Jazz vs GS Warriors');
+        updateStatusUI(CONTRACTS['England W vs Wales W'], 'status-contract-enam', 'text-contract-enam', 'England W vs Wales W');
+        updateStatusUI(CONTRACTS['Netherlands W vs France W'], 'status-contract-tujuh', 'text-contract-tujuh', 'Netherlands W vs France W');
+        updateStatusUI(CONTRACTS['CHI Cubs vs NY Yankees'], 'status-contract-delapan', 'text-contract-delapan', 'CHI Cubs vs NY Yankees');
+        updateStatusUI(CONTRACTS['MIA Marlins vs BAL Orioles'], 'status-contract-sembilan', 'text-contract-sembilan', 'MIA Marlins vs BAL Orioles');
+        updateStatusUI(CONTRACTS['TB Rays vs BOS Red Sox'], 'status-contract-sepuluh', 'text-contract-sepuluh', 'TB Rays vs BOS Red Sox');
+        updateStatusUI(CONTRACTS['COL Rockies vs CIN Reds'], 'status-contract-sebelas', 'text-contract-sebelas', 'COL Rockies vs CIN Reds');
+        updateStatusUI(CONTRACTS['SEA Mariners vs DET Tigers'], 'status-contract-duabelas', 'text-contract-duabelas', 'SEA Mariners vs DET Tigers');
 
         setInterval(() => {
-            updateStatusUI(CONTRACTS['T. Fritz vs C. Alcaraz'], 'status-contract-satu', 'text-contract-satu', 'T. Fritz vs C. Alcaraz');
-            updateStatusUI(CONTRACTS['J. Sinner vs N. Djokovic'], 'status-contract-dua', 'text-contract-dua', 'J. Sinner vs N. Djokovic');
-            updateStatusUI(CONTRACTS['A. Anisimova vs I. Swiatek'], 'status-contract-tiga', 'text-contract-tiga', 'A. Anisimova vs I. Swiatek');
+            updateStatusUI(CONTRACTS['J. Sinner vs C. Alcaraz'], 'status-contract-satu', 'text-contract-satu', 'J. Sinner vs C. Alcaraz');
+            updateStatusUI(CONTRACTS['WAS Wizards vs BKN Nets'], 'status-contract-dua', 'text-contract-dua', 'WAS Wizards vs BKN Nets');
+            updateStatusUI(CONTRACTS['LA Clippers vs MIL Bucks'], 'status-contract-tiga', 'text-contract-tiga', 'LA Clippers vs MIL Bucks');
             updateStatusUI(CONTRACTS['Chelsea vs PSG'], 'status-contract-empat', 'text-contract-empat', 'Chelsea vs PSG');
-            updateStatusUI(CONTRACTS['L. Samsonova vs J. Bouzas Maneiro'], 'status-contract-lima', 'text-contract-lima', 'L. Samsonova vs J. Bouzas Maneiro');
-            updateStatusUI(CONTRACTS['E. Alexandrova vs B. Bencic'], 'status-contract-enam', 'text-contract-enam', 'E. Alexandrova vs B. Bencic');
-            updateStatusUI(CONTRACTS['M. Andreeva vs N. Navarro'], 'status-contract-tujuh', 'text-contract-tujuh', 'M. Andreeva vs N. Navarro');
-            updateStatusUI(CONTRACTS['I. Swiatek vs C. Tauson'], 'status-contract-delapan', 'text-contract-delapan', 'I. Swiatek vs C. Tauson');
-            updateStatusUI(CONTRACTS['Fluminense vs Chelsea'], 'status-contract-sembilan', 'text-contract-sembilan', 'Fluminense vs Chelsea');
-            updateStatusUI(CONTRACTS['PSG vs Real Madrid'], 'status-contract-sepuluh', 'text-contract-sepuluh', 'PSG vs Real Madrid');
-            updateStatusUI(CONTRACTS['M. Andreeva vs H. Baptiste'], 'status-contract-sebelas', 'text-contract-sebelas', 'M. Andreeva vs H. Baptiste');
-            updateStatusUI(CONTRACTS['B. Krejcikova vs E. Navarro'], 'status-contract-duabelas', 'text-contract-duabelas', 'B. Krejcikova vs E. Navarro');
+            updateStatusUI(CONTRACTS['UTA Jazz vs GS Warriors'], 'status-contract-lima', 'text-contract-lima', 'UTA Jazz vs GS Warriors');
+            updateStatusUI(CONTRACTS['England W vs Wales W'], 'status-contract-enam', 'text-contract-enam', 'England W vs Wales W');
+            updateStatusUI(CONTRACTS['Netherlands W vs France W'], 'status-contract-tujuh', 'text-contract-tujuh', 'Netherlands W vs France W');
+            updateStatusUI(CONTRACTS['CHI Cubs vs NY Yankees'], 'status-contract-delapan', 'text-contract-delapan', 'CHI Cubs vs NY Yankees');
+            updateStatusUI(CONTRACTS['MIA Marlins vs BAL Orioles'], 'status-contract-sembilan', 'text-contract-sembilan', 'MIA Marlins vs BAL Orioles');
+            updateStatusUI(CONTRACTS['TB Rays vs BOS Red Sox'], 'status-contract-sepuluh', 'text-contract-sepuluh', 'TB Rays vs BOS Red Sox');
+            updateStatusUI(CONTRACTS['COL Rockies vs CIN Reds'], 'status-contract-sebelas', 'text-contract-sebelas', 'COL Rockies vs CIN Reds');
+            updateStatusUI(CONTRACTS['SEA Mariners vs DET Tigers'], 'status-contract-duabelas', 'text-contract-duabelas', 'SEA Mariners vs DET Tigers');
         }, 1000); // 1000ms = 1 detik
     } else {
         Swal.fire({

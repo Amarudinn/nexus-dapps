@@ -1,4 +1,75 @@
 const matches = [
+    // {
+    //     "teamA": "Chelsea",
+    //     "teamB": "PSG",
+    //     "winner": "PSG",
+    //     "date": "2025-07-14",
+    //     "type": "Match Winner",
+    //     "odds": {
+    //         "Chelsea": "2.4",
+    //         "PSG": "1.4",
+    //         "Draw": "2.4"
+    //     },
+    //     "contract": "0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF",
+    //     "bets": {
+    //         "Chelsea": [],
+    //         "PSG": [],
+    //         "Draw": []
+    //     }
+    // },
+    {
+        "teamA": "A. Anisimova",
+        "teamB": " I. Swiatek",
+        "winner": " I. Swiatek",
+        "date": "2025-07-12",
+        "type": "Match Winner",
+        "odds": {
+            "A. Anisimova": "1.9",
+            " I. Swiatek": "1.4"
+        },
+        "contract": "0xd25EcA3e4C874376d99f795980b822f4b06f31c9",
+        "bets": {
+            "A. Anisimova": [
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "10 NEX" },
+                { address: "0x2Fea88617eAaf2f7a2015A9eDE1C8510A7AA78E1", bet: "1 NEX" }
+            ],
+            " I. Swiatek": []
+        }
+    },
+    {
+        "teamA": "J. Sinner",
+        "teamB": "N. Djokovic",
+        "winner": "J. Sinner",
+        "date": "2025-07-11",
+        "type": "Match Winner",
+        "odds": {
+            "J. Sinner": "1.4",
+            "N. Djokovic": "1.9"
+        },
+        "contract": "0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49",
+        "bets": {
+            "J. Sinner": [],
+            "N. Djokovic": [
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "10 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "T. Fritz",
+        "teamB": "C. Alcaraz",
+        "winner": "C. Alcaraz",
+        "date": "2025-07-11",
+        "type": "Match Winner",
+        "odds": {
+            "T. Fritz": "2.4",
+            "C. Alcaraz": "1.1"
+        },
+        "contract": "0x133b67279f7E7835a7Dc5aE118091b461717c7cA",
+        "bets": {
+            "T. Fritz": [],
+            "C. Alcaraz": []
+        }
+    },
     {
         "teamA": "PSG",
         "teamB": "Real Madrid",
