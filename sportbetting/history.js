@@ -1,22 +1,87 @@
 const matches = [
-    // {
-    //     "teamA": "Chelsea",
-    //     "teamB": "PSG",
-    //     "winner": "PSG",
-    //     "date": "2025-07-14",
-    //     "type": "Match Winner",
-    //     "odds": {
-    //         "Chelsea": "2.4",
-    //         "PSG": "1.4",
-    //         "Draw": "2.4"
-    //     },
-    //     "contract": "0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF",
-    //     "bets": {
-    //         "Chelsea": [],
-    //         "PSG": [],
-    //         "Draw": []
-    //     }
-    // },
+    {
+        "teamA": "UTA Jazz",
+        "teamB": "GS Warriors",
+        "winner": "GS Warriors",
+        "date": "2025-07-14",
+        "type": "Match Winner",
+        "odds": {
+            "UTA Jazz": "1.1",
+            "GS Warriors": "3"
+        },
+        "contract": "0x8b9e0E7fe46b4e494bc9645DEf8Ae18D0E632595",
+        "bets": {
+            "UTA Jazz": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1.0 NEX" }
+            ],
+            "GS Warriors": [
+                { address: "0x69C78846549ffE1914FF2b8A747d2611F4e576b0", bet: "1.0 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "LA Clippers",
+        "teamB": "MIL Bucks",
+        "winner": "LA Clippers",
+        "date": "2025-07-14",
+        "type": "Match Winner",
+        "odds": {
+            "LA Clippers": "1.4",
+            "MIL Bucks": "2.4"
+        },
+        "contract": "0xd25EcA3e4C874376d99f795980b822f4b06f31c9",
+        "bets": {
+            "LA Clippers": [
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "MIL Bucks": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1.0 NEX" }
+            ]
+        }
+    },
+    {
+        "teamA": "WAS Wizards",
+        "teamB": "BKN Nets",
+        "winner": "WAS Wizards",
+        "date": "2025-07-14",
+        "type": "Match Winner",
+        "odds": {
+            "WAS Wizards": "1.1",
+            "BKN Nets": "3"
+        },
+        "contract": "0xFb3D146642CF9C98e50dda36bCB475eDEAFa3f49",
+        "bets": {
+            "WAS Wizards": [
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1.0 NEX" },
+                { address: "0x65053a1F3f09E235b529CCcE63850546D1C6C8ed", bet: "0.1 NEX" }
+            ],
+            "BKN Nets": []
+        }
+    },
+    {
+        "teamA": "Chelsea",
+        "teamB": "PSG",
+        "winner": "Chelsea",
+        "date": "2025-07-14",
+        "type": "Match Winner",
+        "odds": {
+            "Chelsea": "2.4",
+            "PSG": "1.4",
+            "Draw": "2.4"
+        },
+        "contract": "0xad995032e4Ad3492cC182fE06BD25262DBA1A3BF",
+        "bets": {
+            "Chelsea": [
+                { address: "0xF50ABf0747B13F0eF95E5f0501B93c12F87ECfBF", bet: "10.0 NEX" },
+                { address: "0x7C84E769d02b649e5c3301f26B893ae6dF12A70e", bet: "0.5 NEX" },
+                { address: "0xce43e305434571Ed0a3fbb2641ab893E7f32307d", bet: "1.0 NEX" }
+            ],
+            "PSG": [
+                { address: "0x2Fea88617eAaf2f7a2015A9eDE1C8510A7AA78E1", bet: "1.0 NEX" }
+            ],
+            "Draw": []
+        }
+    },
     {
         "teamA": "A. Anisimova",
         "teamB": " I. Swiatek",
